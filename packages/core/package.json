@@ -1,0 +1,26 @@
+{
+  "name": "@fullness/core",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Hariyanto Djong <vtesha@hotmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/djonghariyanto/fullness",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}

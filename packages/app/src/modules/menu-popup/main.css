@@ -1,0 +1,28 @@
+.menu-popup {
+  --primary-bg-color: #fff; 
+  --primary-title-color: var(--gb700);
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 2px 2px 12px #c4c4c4;
+  animation: 0.2s appear ease-in;
+
+  background: inherit;
+  color: inherit;
+  height: auto;
+  z-index: 7;
+  opacity: 0;
+  transition: 0.1s opacity;
+  background-color: white;
+  width: calc(100% - 48px);
+}
+
+@media (min-width: 415px) {
+  .menu-popup {
+    width: max-content;
+  }
+}
+

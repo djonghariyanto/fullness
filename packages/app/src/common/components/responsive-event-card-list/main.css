@@ -1,0 +1,34 @@
+.responsive-event-card-list {
+  width: 100%;
+}
+
+.responsive-event-card-list__row:first-child {
+  margin-top: 0;
+}
+
+.responsive-event-card-list__row {
+  display: flex; 
+  max-width: calc( var(--count) * var(--event-card-max-width) );
+  margin: 0 18px;
+  margin-top: 24px;
+}
+
+.responsive-event-card-list--one {
+  --count: 1;
+}
+
+.responsive-event-card-list--two {
+  --count: 2;
+}
+
+.responsive-event-card-list--three {
+  --count: 3;
+}
+
+.responsive-event-card-list--four {
+  --count: 4;
+}
+
+.responsive-event-card-list--five {
+  --count: 5;
+}

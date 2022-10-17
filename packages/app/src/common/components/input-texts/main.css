@@ -1,0 +1,56 @@
+.input {
+  position: relative;
+}
+
+.input__label {
+  position: absolute;
+  left: 8px;
+  top: 40%;
+  cursor: text;
+  padding: 0 6px;
+  color: #abacba; 
+  transition: all 0.1s ease-out;
+  font-size: 1.1rem;
+}
+
+.input__label--rest {
+  top: 0;
+  color: #5c5370;
+  background-color: #fff;
+  font-size: 0.75rem;
+}
+
+.input__value {
+  margin: 8px 0 0 0;
+  padding: 18px 12px;
+  border-radius: 4px;
+  border: 1px solid #abacba;
+}
+
+.input__value:focus {
+  outline: 1px solid #73758c;
+}
+
+.input__value--full-width {
+  width: 100%;
+}
+
+.input--search {
+  display: flex;
+  border-radius: 2px;
+  border: 1px solid #e3e3e8;
+}
+
+.input--search:focus-within {
+  border: 1px solid #abacba;
+}
+
+.input--search__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 18px;
+}
+
+.input--search__button {
+}

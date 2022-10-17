@@ -1,0 +1,45 @@
+.label {
+  font-size: inherit;
+  color: inherit;
+  background-color: inherit;
+}
+
+.label--xlarge {
+  font-size: var(--size-xl); 
+}
+
+.label--large {
+  font-size: var(--size-lg); 
+}
+
+.label--medium {
+  font-size: var(--size-mid); 
+}
+
+.label--small {
+  font-size: var(--size-sm); 
+}
+
+.label--primary {
+  font-size: var(--primary-label-size, --size-lg);
+  font-weight: var(--primary-label-weight, inherit);
+  color: var(--primary-label-color, inherit);
+  background-color: var(--primary-label-bgcolor, inherit);
+  letter-spacing: var(--primary-label-spacing, normal);
+}
+
+.label--secondary {
+  font-size: var(--secondary-label-size, --size-mid);
+  font-weight: var(--secondary-label-weight, inherit);
+  color: var(--secondary-label-color, inherit);
+  background-color: var(--secondary-label-bgcolor, inherit);
+  letter-spacing: var(--secondary-label-spacing, normal);
+}
+
+.label--tertiary {
+  font-size: var(--tertiary-label-size, --size-mid);
+  font-weight: var(--tertiary-label-weight, inherit);
+  color: var(--tertiary-label-color, inherit);
+  background-color: var(--tertiary-label-bgcolor, inherit);
+  letter-spacing: var(--tertiary-label-spacing, normal);
+}

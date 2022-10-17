@@ -1,0 +1,7 @@
+.transition-view {
+  display: flex;
+}
+
+.transition-view--animate {
+  transition: 0.1s transform;
+}

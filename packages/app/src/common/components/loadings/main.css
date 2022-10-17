@@ -1,0 +1,15 @@
+.loading {
+}
+
+.loading--content {
+  position: fixed;
+  z-index: 9;
+  background-color: rgba(247, 247, 248, 0.1);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

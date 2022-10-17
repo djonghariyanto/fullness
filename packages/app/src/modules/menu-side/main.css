@@ -1,0 +1,32 @@
+.menu-side {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin-top: 96px;
+  display: flex;
+  width: 100%;
+  background-color: var(--mobile-menu-side-overlay);
+}
+
+.menu-side__content {
+  animation: 0.1s draw-right;
+}
+
+@media (min-width: 801px) {
+  .menu-side {
+    background-color: unset;
+  }
+}
+
+@keyframes draw-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+

@@ -1,0 +1,39 @@
+.--fg-white {
+  color: white;
+  fill: white;
+}
+
+.--fg-gb25 {
+  color: #f7f7f8;
+  fill: #f7f7f8;
+}
+
+.--fg-gb50 {
+  color: #f1f1f4;
+  fill: #f1f1f4;
+}
+
+.--fg-gb500 {
+  color: #73758c;
+  fill: #73758c;
+}
+
+.--fg-gb600 {
+  color: #5c5e70;
+  fill: #5c5e70;
+}
+
+.--fg-gb700 {
+  color: #454654;
+  fill: #454654;
+}
+
+.--fg-gb800 {
+  color: #2e2f38;
+  fill: #2e2f38;
+}
+
+.--fg-gb900 {
+  color: #17171c;
+  fill: #17171c;
+}

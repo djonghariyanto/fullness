@@ -1,0 +1,24 @@
+.filter-group {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.filter-group--dialog {
+  width: 375px; 
+}
+
+.filter-group__header {
+  padding: 24px;
+}
+
+.filter-group__content {
+  border-top: 1px solid #e3e3e8;
+  width: 100%;
+}
+
+@media (min-width: 801px) {
+  .filter-group--dialog {
+    width: 540px;
+  }
+}

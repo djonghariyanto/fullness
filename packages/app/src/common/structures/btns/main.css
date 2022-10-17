@@ -1,0 +1,24 @@
+.button {
+  cursor: pointer;
+  outline: none;
+  border: unset;
+  margin:0;
+  padding: 0;
+  width: inherit;
+  height: 40px;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  border-radius: inherit;
+  background-color: var(--primary-button-bgcolor);
+}
+
+.button:hover {
+  background-color: var(--primary-button-hover-bgcolor);
+}
+
+.button--flat {
+  display: block;
+  width: 100%;
+}
+

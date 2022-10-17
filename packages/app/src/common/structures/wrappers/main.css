@@ -1,0 +1,48 @@
+.wrapper {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+.wrapper--icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --icon-stroke: var(--primary-icon-stroke);
+  --icon-fill: none;
+}
+
+.wrapper--icon-selected {
+  --icon-fill: var(--primary-icon-fill-selected);
+  --icon-stroke: var(--primary-icon-stroke-selected);
+}
+
+.wrapper__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.wrapper--secondary {
+  background-color: var(--gb50);
+  color: var(--gb900);
+}
+
+.wrapper--flat {
+  color: var(--gb900);
+  background-color: unset;
+}
+
+.wrapper--title {
+  font-family: revert;
+  font-weight: revert;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.2rem;
+  max-height: 2.4rem;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: normal;
+}

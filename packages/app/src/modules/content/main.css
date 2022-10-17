@@ -1,0 +1,15 @@
+.content {
+  position: relative;
+  transition: 0.1s margin-left;
+  min-width: 375px;
+}
+
+.content--menu-side-activated {
+}
+
+@media (min-width: 801px) {
+  .content--menu-side-activated {
+    margin-left: var(--default-menu-side-width); 
+  }
+}
+

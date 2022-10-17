@@ -1,0 +1,181 @@
+body {
+  overflow: scroll;
+  font-family: var(--family);
+}
+
+:root {
+  --separator8: 8px;
+  --separator12: 12px;
+  --separator18: 18px; 
+  --separator24: 24px; 
+  --separator32: 32px;
+  --g500: #00ffa2;
+  --g600: #00cc81;
+  --gg500: #59a68a;
+  --gg600: #47856e;
+  --gg700: #366353;
+  --gb25: #f7f7f8;
+  --gb50: #f1f1f4;
+  --gb100: #e3e3e8;
+  --gb200: #c7c8d1;
+  --gb300: #a8acba;
+  --gb400: #8f91a3;
+  --gb500: #73758c;
+  --gb600: #5c5e70;
+  --gb700: #454654;
+  --gb800: #2e2f38;
+  --gb900: #17171c;
+  --sw50: #fff6e5;
+  --sw300: #ffc766;
+  --sw400: #ffb433;
+  --sw500: #ffa200;
+  --sw700: #996100;
+  --family: "Inter";
+  --size-tsm: 30px;
+  --size-txs: 24px;
+  --size-xl: 20px;
+  --size-lg: 18px;
+  --size-mid: 16px;
+  --size-sm: 14px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi-bold: 600;
+  --ls10: .1rem;
+  --ls20: .2rem;
+  --default-container-left: 0;
+  --default-container-right: 0;
+  --default-container-top: 0;
+  --default-container-bottom: 0;
+  --default-menu-side-width: 304px;
+  --mobile-menu-side-width: 304px;
+  --mobile-menu-side-overlay: rgba(0, 0, 0, 0.2);
+  --medium-size: 801px;
+  --default-icon-fill: black;
+  --default-icon-stroke: black;
+}
+
+@keyframes drawup {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.--bg-gb25 {
+  background-color: #f7f7f8;
+}
+
+.--bg-gb50 {
+  background-color: #f1f1f4;
+}
+
+.--bg-gb500 {
+  background-color: #73758c;
+}
+
+.--bg-gb600 {
+  background-color: #5c5e70;
+}
+
+.--bg-gb700 {
+  background-color: #454654;
+}
+
+.--bg-gb800 {
+  background-color: #2e2f38;  
+}
+
+.--bg-gb900 {
+  background-color: #17171c;
+}
+
+.--bg-g25 {
+  background-color: #f0fff9;
+}
+
+.--bg-g50 {
+  background-color: #e5fff6;
+}
+
+.--bg-g500 {
+  background-color: #00ffa2;
+}
+
+.--bg-g600 {
+  background-color: #00cc81;
+}
+
+.--bg-g700 {
+  background-color: #009961;
+}
+
+.--bg-g800 {
+  background-color: #00a86b;  
+}
+
+.--bg-g900 {
+  background-color: #003320;
+}
+
+.--bg-sw25 {
+  background-color: #fff9f0;
+}
+
+.--bg-sw50 {
+  background-color: #fff6e5;
+}
+
+.--bg-sw500 {
+  background-color: #ffa200;
+}
+
+.--bg-sw600 {
+  background-color: #cc8100;
+}
+
+.--bg-sw700 {
+  background-color: #996100;
+}
+
+.--bg-sw800 {
+  background-color: #664100;  
+}
+
+.--bg-sw900 {
+  background-color: #332010;
+}
+
+.--bg-s25 {
+  background-color: #fefdf1;
+}
+
+.--bg-s50 {
+  background-color: #fdfbe7;
+}
+
+.--bg-s400 {
+  background-color: #f2e040;
+}
+
+.--bg-s500 {
+  background-color: #eedb11;
+}
+
+.--bg-s600 {
+  background-color: #bfad0d;
+}
+
+.--bg-s700 {
+  background-color: #8f820a;
+}
+
+.--bg-s800 {
+  background-color: #5f5607;  
+}
+
+.--bg-s900 {
+  background-color: #302b03;
+}

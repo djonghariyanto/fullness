@@ -1,0 +1,54 @@
+.--inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.--size-mid {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.--size-sm {
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.--size-xs {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.--size-txl {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.--size-tlg {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.--size-tmid {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.--size-tsm {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.--weight-regular {
+  font-weight: 400;
+}
+
+.--weight-medium {
+  font-weight: 500;
+}
+
+.--weight-semi-bold {
+  font-weight: 600;
+}
+
+.--weight-bold {
+  font-weight: 700;
+}

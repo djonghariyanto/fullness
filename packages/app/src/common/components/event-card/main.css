@@ -1,0 +1,34 @@
+.event-card {
+  position: relative;
+  width: calc((100% / var(--count)) - 24px);
+  margin: 0 12px 12px 12px;
+}
+
+.event-card::after {
+  content: "";
+  display: block;
+}
+
+.event-card__image {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.event-card__desc {
+  display: flex;
+  margin-top: 12px;
+  line-height: 2rem;
+}
+
+.event-card__desc__date {
+  width: fit-content;
+  flex: none;
+  padding: 8px;
+  border-radius: 12px; 
+}
+
+.event-card__desc__title {
+  margin: 0;
+  margin-left: 18px;
+}

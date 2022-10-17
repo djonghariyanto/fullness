@@ -1,0 +1,16 @@
+.container {
+}
+
+.container--primary {
+  margin-left: var(--primary-container-left, var(--default-container-left));
+  margin-right: var(--primary-container-right, var(--default-container-right));
+  margin-top: var(--primary-container-top, var(--default-container-top));
+  margin-bottom: var(--primary-container-bottom, var(--default-container-bottom));
+}
+
+.container--secondary {
+  margin-left: var(--secondary-container-left, var(--default-container-left));
+  margin-right: var(--secondary-container-right, var(--default-container-right));
+  margin-top: var(--secondary-container-top, var(--default-container-top));
+  margin-bottom: var(--secondary-container-bottom, var(--default-container-bottom));
+}

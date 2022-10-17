@@ -1,0 +1,13 @@
+.link {
+  cursor: pointer;
+}
+
+.link--primary {
+  color: var(--primary-link-color, inherit);
+  text-decoration: var(--primary-link-decoration, underline);
+}
+
+.link--primary:hover {
+  color: var(--primary-link-color-hover, var(--primary-link-color));
+  text-decoration: var(--primary-link-decoration-hover, var(--primary-link-decoration));
+}

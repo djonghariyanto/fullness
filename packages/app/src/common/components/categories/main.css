@@ -1,0 +1,8 @@
+.category {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.category--dialog {
+}

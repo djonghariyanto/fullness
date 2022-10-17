@@ -1,0 +1,64 @@
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: unset;
+  margin:0;
+  padding: 0;
+  width: inherit;
+  height: 40px;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  border-radius: inherit;
+}
+
+.btn--hidden {
+  display: none;
+}
+
+.btn--icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.btn--secondary {
+  background-color: var(--gb50);
+  color: var(--gb900);
+}
+
+.btn--secondary:hover {
+  background-color: var(--gb100);
+}
+
+.btn--flat {
+  color: var(--gb900);
+  background-color: unset;
+}
+
+.btn--flat-disabled {
+  cursor: unset;
+  color: var(--gb200);
+}
+
+.btn--flat-selected {
+  background-color: var(--gb50);
+}
+.btn--flat-selected:hover {
+  background-color: var(--gb100);
+}
+
+.btn--flat:not(.btn--flat-disabled, .btn--hidden, .btn--flat-selected):hover {
+  background-color: var(--gb50);
+}
+
+.btn--icon__content {
+  width: 24px;
+  height: 24px;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}

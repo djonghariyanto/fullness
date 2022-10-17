@@ -1,0 +1,7 @@
+.image {
+  object-fit: contain;
+}
+
+.image--event-thumbnail {
+  width: 100%;
+}

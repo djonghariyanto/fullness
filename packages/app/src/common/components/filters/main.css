@@ -1,0 +1,32 @@
+.filter {
+  font-family: "Inter";
+  --primary-button-bgcolor: #fff;
+  --primary-button-hover-bgcolor: var(--gb50);
+  --primary-label-size: var(--size-sm);
+  --primary-label-color: var(--gb500);
+  --primary-label-weigth: var(--weight-regular);
+  --secondary-label-size: var(--size-sm);
+  --primary-container-left: var(--separator24);
+  --primary-container-right: var(--separator24);
+  --secondary-container-left: var(--separator18);
+  --primary-icon-fill-selected: var(--g600);
+  --primary-icon-stroke-selected: var(--g600);
+  --primary-icon-stroke: black;
+}
+
+.filter__section {
+  padding: 12px 0;
+}
+
+.filter__section:first-child {
+  padding-top: 0;
+}
+
+.filter__section--top-divider {
+  border-top: 1px solid #e3e3e8;
+}
+
+.filter--root {
+  height: 100%;
+}
+

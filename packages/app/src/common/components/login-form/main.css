@@ -1,0 +1,10 @@
+.login-form {
+  box-sizing: content-box;
+  border-radius: 8px;
+}
+
+.login-form__message {
+  margin-top:4px;
+  position: relative;
+  height: 12px;
+}

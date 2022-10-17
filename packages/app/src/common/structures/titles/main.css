@@ -1,0 +1,13 @@
+.title {
+}
+
+.title--primary {
+  font-size: var(--primary-title-size, --size-lg);
+  font-weight: var(--primary-title-weight, inherit);
+  color: var(--primary-title-color, inherit);
+}
+
+.title--secondary {
+  font-size: var(--secondary-title-size, --size-mid);
+  font-weight: var(--secondary-title-weight, inherit);
+}

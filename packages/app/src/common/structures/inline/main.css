@@ -1,0 +1,17 @@
+.inline {
+  height: 40px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.inline--apart {
+  justify-content: space-between;
+}
+
+.inline__item {
+  flex: none;
+  display: inline-flex;
+}

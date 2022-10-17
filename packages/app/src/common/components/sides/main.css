@@ -1,0 +1,12 @@
+.side {
+  width: 304px;
+}
+
+.side--root {
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: white;
+  overflow-y: auto;
+}
+

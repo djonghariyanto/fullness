@@ -1,0 +1,12 @@
+.signup-form {
+  box-sizing: content-box;
+  border-radius: 8px;
+  margin: 36px;
+  width: 280px;
+}
+
+.signup-form__message {
+  margin-top:4px;
+  position: relative;
+  height: 12px;
+}

@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  height: 96px;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+}
+
+.header__icon {
+  width: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__nav {
+  margin-right: 24px;
+  flex: 1 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header__nav__reverse:first-child {
+  display: flex;
+  flex-direction: row-reverse;
+}
