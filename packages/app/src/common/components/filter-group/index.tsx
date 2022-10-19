@@ -80,12 +80,8 @@ export default function FilterGroup() {
       </div>
       <div className={contentChild}>
         <TransitionView id={filterGroupId} observe={true}>
-          <DefaultCategory
-            onToggle={(payload: FilterItem) => subStore({ type: toggleCategory, payload })}
-          />
-          <DefaultCalender
-            onToggle={(payload: FilterItem) => subStore({ type: toggleDate, payload })}
-          />
+          <DefaultCategory/>
+          <DefaultCalender/>
         </TransitionView>
       </div>
     </div>

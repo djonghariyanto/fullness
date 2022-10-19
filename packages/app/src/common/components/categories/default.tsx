@@ -1,27 +1,42 @@
 import * as React from 'react';
 import { default as _ } from './main.css';
-import { categoryList } from './';
 
-import { useStore, Action } from '@/store';
-import { FilterItem } from '@/store/state';
-import FlatButton from '@/common/structures/buttons/flat';
+import { useStore } from '@/store';
+import { subStore } from '@/store/action';
+import { toggleCategory } from '@/common/components/filter-group/store/action';
+import BindBehavior from '@/common/components/binds/behavior';
+import FlatButton from '@/common/structures/btns/flat';
+import ofSubStoreToggleCategory from './renders/of-sub-store-toggle-category';
+import onInit from './renders/on-init';
 
 const base = [
-  _["category"],
+  _["category"]
 ].join(' ');
 
-export default function DefaultCategory(props: { onToggle: (category: FilterItem) => Action<any> }) {
-  const { dispatch } = useStore();
+export default function DefaultCategory() {
+  const { useRenderPipeline, dispatch } = useStore(),
+    render = useRenderPipeline(
+      onInit(),
+      { categories: [] }
+    );
 
   return (
     <div className={base}>
-      {categoryList.map((category, key) =>
-        <FlatButton
+      {render.categories?.map((category: { id: string, selected: boolean }, key: number) =>
+        <BindBehavior
           key={key}
-          onClick={() => dispatch(props.onToggle(({ id: category, display: category })))}
+          selected={category.selected}
+          onObserve={ofSubStoreToggleCategory(key)}
         >
-          {category}
-        </FlatButton>)
+          <FlatButton
+            onClick={() => dispatch(subStore({
+              type: toggleCategory,
+              payload: { index: key, id: category.id, display: category.id }
+            }))}
+          >
+            {category.id}
+          </FlatButton>
+        </BindBehavior>)
       }
     </div>
   );

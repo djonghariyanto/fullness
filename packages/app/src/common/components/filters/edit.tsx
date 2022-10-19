@@ -3,7 +3,8 @@ import { default as _ } from './main.css'; import { useStore } from '@/store';
 
 import { activateDialog, previousInTransitionView, setFilter } from '@/store/action';
 import { FilterItem } from '@/store/state';
-import IconWrapper, { Icon } from '@/common/structures/wrappers/icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import AddIcon from '@/common/svgs/add';
 import DashIcon from '@/common/svgs/dash';
 import ArrowIcon from '@/common/svgs/arrow';
@@ -50,11 +51,11 @@ export default function EditFilter() {
             >
               <PrimaryContainer>
                 <Inline>
-                  <IconWrapper>
+                  <PrimaryIconWrapper>
                     <Icon>
                       <DashIcon />
                     </Icon>
-                  </IconWrapper>
+                  </PrimaryIconWrapper>
                   <SecondaryContainer>
                     <SecondaryLabel>
                       {category.display}
@@ -73,11 +74,11 @@ export default function EditFilter() {
             >
               <PrimaryContainer>
                 <Inline>
-                  <IconWrapper>
+                  <PrimaryIconWrapper>
                     <Icon>
                       <DashIcon />
                     </Icon>
-                  </IconWrapper>
+                  </PrimaryIconWrapper>
                   <SecondaryContainer>
                     <SecondaryLabel>
                       {date.display}
@@ -100,11 +101,11 @@ export default function EditFilter() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <ArrowIcon style={{ transform: 'rotate(-90deg)' }} />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Done
@@ -139,11 +140,11 @@ export default function EditFilter() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <AddIcon />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Add new category
@@ -167,11 +168,11 @@ export default function EditFilter() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <AddIcon />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Add new day filter
@@ -194,11 +195,11 @@ export default function EditFilter() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <AddIcon />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Add new date

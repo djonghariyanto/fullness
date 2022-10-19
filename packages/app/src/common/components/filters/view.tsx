@@ -3,7 +3,8 @@ import { default as _ } from './main.css';
 import { useStore } from '@/store';
 
 import ViewFilterSection from './common/component.view-filter-section';
-import IconWrapper, { Icon } from '@/common/structures/wrappers/icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import TouchWrapper from '@/common/components/wrappers/touch';
 import ArrowIcon from '@/common/svgs/arrow';
 import CategoryIcon from '@/common/svgs/category';
@@ -13,7 +14,6 @@ import SecondaryLabel from '@/common/structures/labels/secondary';
 import Inline from '@/common/structures/inline';
 import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryContainer from '@/common/structures/containers/secondary';
-import SearchIcon from '@/common/svgs/search';
 import { nextInTransitionView } from '@/store/action'; import { rootSideMenuId } from '@/common/components/sides/root';
 import fromFiltersState from '@/common/renders/from-filters-state';
 
@@ -36,11 +36,11 @@ export default function ViewFilter() {
                   <PrimaryContainer key={categories.id}>
                     <TouchWrapper>
                       <Inline>
-                        <IconWrapper>
+                        <PrimaryIconWrapper>
                           <Icon>
                             <CategoryIcon />
                           </Icon>
-                        </IconWrapper>
+                        </PrimaryIconWrapper>
                         <SecondaryContainer>
                           <SecondaryLabel>
                             {categories.display}
@@ -53,11 +53,11 @@ export default function ViewFilter() {
                   <PrimaryContainer key={date.id}>
                     <TouchWrapper>
                       <Inline>
-                        <IconWrapper>
+                        <PrimaryIconWrapper>
                           <Icon>
                             <DateIcon />
                           </Icon>
-                        </IconWrapper>
+                        </PrimaryIconWrapper>
                         <SecondaryContainer>
                           <SecondaryLabel>
                             {date.display}
@@ -79,11 +79,11 @@ export default function ViewFilter() {
         <FlatButton onClick={() => dispatch(nextInTransitionView({ id: rootSideMenuId }))}>
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <ArrowIcon style={{ transform: 'rotate(90deg)' }} />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   New filter group

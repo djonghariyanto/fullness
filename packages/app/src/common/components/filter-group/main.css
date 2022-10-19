@@ -2,6 +2,16 @@
   overflow: hidden;
   white-space: nowrap;
   box-sizing: border-box;
+  --flat-button-size: var(--size-sm);
+  --flat-button-weight: var(--weight-medium);
+  --flat-button-color: var(--gb900);
+  --flat-button-hover-bgcolor: var(--gb100);
+  --flat-button-selected-bgcolor: var(--g600);
+  --flat-button-selected-color: #fff;
+  --flat-button-selected-hover-bgcolor: var(--g700);
+  --flat-button-disabled-color: var(--gb200);
+  --flat-button-disabled-hover-bgcolor: #fff;
+  --flat-button-hidden-hover-bgcolor: #fff;
 }
 
 .filter-group--dialog {

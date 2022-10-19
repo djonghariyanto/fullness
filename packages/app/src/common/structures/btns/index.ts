@@ -7,3 +7,10 @@ export interface Props {
   disabled?: boolean,
   hidden?: boolean
 }
+
+export const initialProps = {
+  hidden: false,
+  selected: false,
+  disabled: false
+}
+

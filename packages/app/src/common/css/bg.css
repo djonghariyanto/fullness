@@ -11,6 +11,7 @@ body {
   --separator32: 32px;
   --g500: #00ffa2;
   --g600: #00cc81;
+  --g700: #009961;
   --gg500: #59a68a;
   --gg600: #47856e;
   --gg700: #366353;
@@ -40,6 +41,7 @@ body {
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semi-bold: 600;
+  --weight-bold: 700;
   --ls10: .1rem;
   --ls20: .2rem;
   --default-container-left: 0;

@@ -4,6 +4,12 @@ const SHORTMONTHS = MONTHS.map(m => m.substring(0, 3));
 
 const toDoubleDigits: (num: number) => string = (num) => num < 10?`0${num}`:`${num}`;
 
+export const toDDMMYYYY = (json: string) => {
+  const date = new Date(json);
+
+  return `${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+}
+
 export type GenerateDateByMonth = (date: Date, options?: { operand?: number, existingDates?: string[] }) => { dates: DateDetail[], current: Date };
 
 export const getMonthInText: (index: number) => string = (index) => MONTHS[index];

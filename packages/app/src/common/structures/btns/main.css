@@ -13,12 +13,44 @@
   background-color: var(--primary-button-bgcolor);
 }
 
-.button:hover {
-  background-color: var(--primary-button-hover-bgcolor);
-}
-
 .button--flat {
   display: block;
   width: 100%;
+  color: var(--flat-button-color);
+  font-weight: var(--flat-button-weight);
+  font-size: var(--flat-button-size);
 }
 
+.button--flat-selected {
+  color: var(--flat-button-selected-color);
+  background-color: var(--flat-button-selected-bgcolor);
+}
+
+.button--flat-disabled {
+  cursor: unset;
+  color: var(--flat-button-disabled-color);
+  background-color: var(--flat-button-disabled-bgcolor);
+}
+
+.button--flat-hidden {
+  background-color: var(--flat-button-hidden-bgcolor);
+}
+
+@media (hover: hover) {
+  .button--flat:hover {
+    background-color: var(--flat-button-hover-bgcolor);
+  }
+
+  .button--flat-selected:hover {
+    background-color: var(--flat-button-selected-hover-bgcolor);
+  }
+
+  .button--flat-hidden:hover {
+    cursor: unset;
+    background-color: var(--flat-button-hidden-hover-bgcolor);
+  }
+
+  .button--flat-disabled:hover {
+    background-color: var(--flat-button-disabled-hover-bgcolor);
+  }
+}

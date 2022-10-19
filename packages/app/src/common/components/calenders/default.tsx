@@ -1,22 +1,20 @@
 import * as React from 'react';
 import { default as _ } from './main.css';
 import Style from '@/common/css';
-import { previousMonthId, currentMonthId, nextMonthId, DateDetail } from './';
+import { previousMonthId, currentMonthId, nextMonthId, DateDetail, toDDMMYYYY } from './';
 
-import { previousInTransitionView, nextInTransitionView } from '@/store/action';
-import { useStore, Action } from '@/store';
-import { FilterItem } from '@/store/state';
+import { previousInTransitionView, nextInTransitionView, subStore } from '@/store/action';
+import { toggleDate } from '@/common/components/filter-group/store/action';
+import { useStore } from '@/store';
 import { SHORTDAYS, MONTHS, SHORTMONTHS } from './';
 import onInitSetMonthTransitionView from './dispatches/on-init-set-month-transition-view';
-import InteractiveFlatIconButton from '@/common/structures/buttons/interactive-flat-icon';
+import FlatButton from '@/common/structures/btns/flat';
+import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import TransitionView, { TransitionViewWrapper } from '@/common/components/transition-view';
 import PointedButton from '@/common/components/buttons/pointed';
+import ofSubStoreToggleDate from './renders/of-sub-store-toggle-date';
+import BindBehavior from '@/common/components/binds/behavior';
 import ofViewTransitionUpdateDates from './renders/of-view-transition-update-dates';
-
-interface Props {
-  id?: string,
-  onToggle: (date: FilterItem) => Action<any>
-}
 
 const base = _["calender"];
 
@@ -42,15 +40,8 @@ const dateChild = [
   Style["--bg-gb25"]
 ].join(' ');
 
-const toDDMMYYYY = (json: string) => {
-  const date = new Date(json);
-
-  return `${date.getDate()} ${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
-}
-
-export default function DefaultCalender(props: Props) {
+export default function DefaultCalender() {
   const { useRenderPipeline, useDispatchPipeline, dispatch } = useStore(),
-    { onToggle } = props,
 
     render = useRenderPipeline(
       ofViewTransitionUpdateDates(),
@@ -96,20 +87,27 @@ export default function DefaultCalender(props: Props) {
       </div >
       <div className={dateChild}>
         {
-          render.calender?.dates.map((i: DateDetail, key: number) => {
-            return <InteractiveFlatIconButton
-              key={i.time+key}
-              selected={i.selected}
-              hidden={!i.activated}
-              disabled={i.expired}
-              onClick={() => dispatch(onToggle({ id: i.json, display: toDDMMYYYY(i.json)  }))}
-            >
-              {i.display}
-            </InteractiveFlatIconButton>
-          })
+          render.calender?.dates.map((i: DateDetail, key: number) =>
+            <SecondaryIconWrapper key={i.time + key}>
+              <BindBehavior
+                selected={i.selected}
+                hidden={!i.activated}
+                disabled={i.expired}
+                onObserve={ofSubStoreToggleDate(key)}
+              >
+                <FlatButton
+                  onClick={() => dispatch(subStore({
+                    type: toggleDate,
+                    payload: { index: key, id: i.json, display: toDDMMYYYY(i.json) }
+                  }))}
+                >
+                  {i.display}
+                </FlatButton>
+              </BindBehavior>
+            </SecondaryIconWrapper>
+          )
         }
       </div>
     </div >
   );
 }
-

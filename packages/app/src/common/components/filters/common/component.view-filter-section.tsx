@@ -2,7 +2,8 @@ import * as React from 'react';
 import { default as _ } from '../main.css';
 import { useStore } from '@/store';
 
-import IconWrapper, { Icon } from '@/common/structures/wrappers/icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import SearchIcon from '@/common/svgs/search';
 import EditIcon from '@/common/svgs/edit';
 import OnOffIcon from '@/common/svgs/onoff';
@@ -31,7 +32,7 @@ const sectionWithDividerBase = [
 export default function ViewFilterSection(props: Props) {
   const { useRenderPipeline, dispatch } = useStore(),
     render = useRenderPipeline(
-      fromFiltersState(([filters]) => ({ 
+      fromFiltersState(([filters]) => ({
         selected: filters[props.index].matchAll
       })),
       { selected: null }
@@ -51,11 +52,11 @@ export default function ViewFilterSection(props: Props) {
       >
         <PrimaryContainer>
           <Inline>
-            <IconWrapper>
+            <PrimaryIconWrapper>
               <Icon>
                 <SearchIcon />
               </Icon>
-            </IconWrapper>
+            </PrimaryIconWrapper>
             <SecondaryContainer>
               <SecondaryLabel>
                 Search event
@@ -69,11 +70,11 @@ export default function ViewFilterSection(props: Props) {
       >
         <PrimaryContainer>
           <Inline>
-          <IconWrapper selected={render.selected}>
+            <PrimaryIconWrapper selected={render.selected}>
               <Icon style={render.selected ? { transform: 'rotate(180deg)' } : null}>
                 <OnOffIcon />
               </Icon>
-            </IconWrapper>
+            </PrimaryIconWrapper>
             <SecondaryContainer>
               <SecondaryLabel>
                 Match all
@@ -87,11 +88,11 @@ export default function ViewFilterSection(props: Props) {
       >
         <PrimaryContainer>
           <Inline>
-            <IconWrapper>
+            <PrimaryIconWrapper>
               <Icon>
                 <EditIcon />
               </Icon>
-            </IconWrapper>
+            </PrimaryIconWrapper>
             <SecondaryContainer>
               <SecondaryLabel>
                 Edit this filters

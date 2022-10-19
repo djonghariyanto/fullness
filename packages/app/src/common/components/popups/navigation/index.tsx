@@ -10,7 +10,8 @@ import PrimaryLabel from '@/common/structures/labels/primary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import FlatButton from '@/common/structures/btns/flat';
 import Inline from '@/common/structures/inline';
-import IconWrapper, { Icon } from '@/common/structures/wrappers/icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryContainer from '@/common/structures/containers/secondary';
 
@@ -59,11 +60,11 @@ export default function NavigationPopup() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <SignoutIcon />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Create new event
@@ -77,11 +78,11 @@ export default function NavigationPopup() {
         >
           <PrimaryContainer>
             <Inline>
-              <IconWrapper>
+              <PrimaryIconWrapper>
                 <Icon>
                   <SignoutIcon />
                 </Icon>
-              </IconWrapper>
+              </PrimaryIconWrapper>
               <SecondaryContainer>
                 <SecondaryLabel>
                   Sign out
