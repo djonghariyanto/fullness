@@ -12,6 +12,7 @@
   --flat-button-disabled-color: var(--gb200);
   --flat-button-disabled-hover-bgcolor: #fff;
   --flat-button-hidden-hover-bgcolor: #fff;
+  --flat-button-radius: 24px;
 }
 
 .filter-group--dialog {

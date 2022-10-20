@@ -54,6 +54,7 @@ body {
   --medium-size: 801px;
   --default-icon-fill: black;
   --default-icon-stroke: black;
+  --default-flat-button-radius: unset;
 }
 
 @keyframes drawup {

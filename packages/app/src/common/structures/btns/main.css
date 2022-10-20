@@ -19,11 +19,13 @@
   color: var(--flat-button-color);
   font-weight: var(--flat-button-weight);
   font-size: var(--flat-button-size);
+  border-radius: var(--flat-button-radius, var(--default-flat-button-radius));
 }
 
 .button--flat-selected {
   color: var(--flat-button-selected-color);
   background-color: var(--flat-button-selected-bgcolor);
+  animation: 0.2s inflate;
 }
 
 .button--flat-disabled {
@@ -52,5 +54,15 @@
 
   .button--flat-disabled:hover {
     background-color: var(--flat-button-disabled-hover-bgcolor);
+  }
+}
+
+@keyframes inflate {
+  0% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
