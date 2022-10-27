@@ -1,8 +1,17 @@
 import * as React from 'react';
 import { default as _ } from './main.css';
 
+import { useStore } from '@/store';
+import { activateSearchPopup, fetchSearchTerm } from '@/store/action';
 import SearchIcon from '@/common/svgs/search';
 import IconWrapper from '@/common/components/wrappers/icon';
+import SearchResultPopup from '@/common/components/popups/search';
+import onElementKeypress from '@/common/dispatches/on-element-keypress';
+import keySearchReducer from './common/util.key-search-reducer';
+import keyMainReducer from './common/util.key-search-reducer';
+import preventSearchReducer from './common/util.prevent-search-reducer';
+
+const commitValue = '[Search Input] commit value';
 
 const base = [
   _["input"],
@@ -12,16 +21,40 @@ const base = [
 const inputBase = _["input--search__input"];
 const iconBase = _["input--search__icon"];
 
-export default function Search(props: any) {
+export { commitValue };
+
+export default function Search(props: { onGenerate?: Generator<number> }) {
+  const { useDispatchPipeline, dispatch } = useStore(),
+    { onGenerate }: { onGenerate: Generator<number> } = Object.assign({}, { onGenerate: null }, props),
+
+    index: number = onGenerate !== null ? onGenerate.next().value : 0,
+    ref = React.useRef(null),
+    inputRef = React.useRef(null);
+
+  useDispatchPipeline(
+    onElementKeypress(inputRef, keySearchReducer, preventSearchReducer)
+  );
+
   return (
-    <div className={base}>
-      <label htmlFor="search-input" className={iconBase}>
+    <div ref={ref} className={base}>
+      <label htmlFor={`search-input${index}`} className={iconBase}>
         <IconWrapper>
           <SearchIcon />
         </IconWrapper>
       </label>
-      <input id="search-input" className={inputBase} type="text">
-      </input>
+      <input
+        ref={inputRef}
+        id={`search-input${index}`}
+        className={inputBase}
+        type="text"
+        autoComplete="off"
+        onFocus={() => dispatch(activateSearchPopup({
+          Component: <SearchResultPopup />,
+          byRef: ref.current,
+          inputRef: inputRef.current
+        }))}
+        onChange={() => dispatch(fetchSearchTerm())}
+      />
     </div>
   );
 }

@@ -11,8 +11,7 @@ import TertiaryLabel from '@/common/structures/labels/tertiary';
 import TitleWrapper from '@/common/structures/wrappers/title';
 import { SHORTMONTHS, getTimeInText } from '@/common/components/calenders';
 
-interface Props {
-  url?: string,
+interface Props { url?: string,
   event: any,
   children: React.ReactElement[] | React.ReactNode;
 }

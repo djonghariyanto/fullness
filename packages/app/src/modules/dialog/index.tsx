@@ -4,6 +4,9 @@ import { default as _ } from './main.css';
 import { useStore } from '@/store';
 import { closeDialog } from '@/store/action';
 import loadDialog from './renders/load-dialog';
+import onKeypress from '@/common/dispatches/on-keypress';
+import keyHandler from './common/util.key-handler';
+import prevent from './common/util.prevent';
 
 export interface Render {
   Content: null
@@ -15,7 +18,11 @@ const closeBase = _["dialog__content__close"];
 
 export function DialogWrapper(props: { withClose?: boolean, children: React.ReactElement }) {
   const { withClose, children } = Object.assign({}, { withClose: true }, props),
-    { dispatch } = useStore();
+    { useDispatchPipeline, dispatch } = useStore();
+
+  useDispatchPipeline(
+    onKeypress(keyHandler, prevent)
+  );
 
   return (
     <div className={base}>

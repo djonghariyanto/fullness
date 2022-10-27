@@ -50,6 +50,31 @@ export const closeMenuPopup = createAction(
   props<void>()
 );
 
+export const activateSearchPopup = createAction(
+  '[Search Popup] activate search popup',
+  props<{ Component: ReactElement, byRef: EventTarget & Element, inputRef: EventTarget & Element }>()
+);
+
+export const closeSearchPopup = createAction(
+  '[Search Popup] close search popup',
+  props<void>()
+);
+
+export const fetchSearchTerm = createAction(
+  '[Search Popup] fetch search term',
+  props<void>()
+);
+
+export const updateResultTerm = createAction(
+  '[Search Popup] update result term',
+  props<string[]>()
+);
+
+export const gotoSearchResultIndex = createAction(
+  '[Search Popup] goto search result index',
+  props<{ index: number, shouldUpdate: boolean }>()
+);
+
 export const loadPath = createAction(
   '[Page] load path',
   props<{ pathname: string, historyAction?: HistoryAction, search?: string }>()
@@ -125,6 +150,11 @@ export const removeEmptyFilter = createAction(
   props<void>()
 );
 
+export const addFilter = createAction(
+  '[Filter] add filter',
+  props<{ id: string, display: string }>()
+);
+
 export const fetchEvent = createAction(
   '[Event] fetch event',
   props<{ index: number } | void>()
@@ -140,10 +170,9 @@ export const subStore = createAction(
   props<{ type: string, payload?: unknown }>()
 );
 
-
 export const readyToSubmit: () => Action<Partial<Status>> = () => setStatus({ submitEntry: true, loading: true });
 export const resetStatusError: () => Action<Partial<Status>> = () => setStatus({ hasErrorOccured: false });
-export const editFiltersByIndex: ([ editMode, editFilterIndex]: ['insert' | 'update', number]) => Action<Partial<Status>> = 
+export const editFiltersByIndex: ([editMode, editFilterIndex]: ['insert' | 'update', number]) => Action<Partial<Status>> =
   ([editMode, editFilterIndex]) => setStatus({ editFilterIndex, editMode });
 export const throwAuthenticationError: () => Action<StateError> = () => throwError({ type: "authentication" });
 export const throwValidationError: () => Action<StateError> = () => throwError({ type: "validation" });

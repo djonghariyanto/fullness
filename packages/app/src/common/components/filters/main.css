@@ -12,6 +12,7 @@
   --primary-icon-fill-selected: var(--g600);
   --primary-icon-stroke-selected: var(--g600);
   --primary-icon-stroke: black;
+  --flat-button-hover-bgcolor: var(--gb50);
 }
 
 .filter__section {

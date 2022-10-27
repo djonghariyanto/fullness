@@ -4,6 +4,7 @@ import { useStore } from '@/store';
 import Header from '@/modules/header';
 import Content from '@/modules/content';
 import Dialog from '@/modules/dialog';
+import SearchPopup from '@/modules/search-popup';
 import MenuPopup from '@/modules/menu-popup';
 import MenuSide from '@/modules/menu-side';
 
@@ -25,6 +26,7 @@ export default function Landing(): React.ReactElement {
   return (
     <>
       <Header />
+      <MenuSide />
       <Content>
         <Root page={ "Root" } pathname={ "/" } />
         <Create page={ "Create" } pathname={ "/create" } />
@@ -32,8 +34,8 @@ export default function Landing(): React.ReactElement {
         <Logout page={ "Logout" } pathname={ "/logout" } />
       </Content>
       <Dialog />
+      <SearchPopup />
       <MenuPopup />
-      <MenuSide />
       <ContentLoading />
     </>
   );

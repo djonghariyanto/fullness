@@ -1,7 +1,8 @@
-import { map, first } from 'rxjs/operators';
+import { map, take, exhaustMap, from } from 'rxjs';
 
 import { Store } from '@/store';
-import { setTransitionViewIndex } from '@/store/action';
+import { Status } from '@/store/state';
+import { setTransitionViewIndex, setStatus } from '@/store/action';
 import { rootSideMenuId } from '../';
 
 const onInit = () =>
@@ -10,11 +11,14 @@ const onInit = () =>
       .pipe(
         map(state => state.filters.length),
         map(count => count === 0
-          ? { id: rootSideMenuId, index: 2 }
-          : { id: rootSideMenuId, index: 1 }
+          ? [{ id: rootSideMenuId, index: 2 }, { filterMode: 'edit' }]
+          : [{ id: rootSideMenuId, index: 1 }, { filterMode: 'view' }]
         ),
-        map(setTransitionViewIndex),
-        first()
+        exhaustMap(([ payload, status ]: [{ id: string, index: number }, Status]) => from([
+          setTransitionViewIndex(payload),
+          setStatus(status)
+        ])),
+        take(2)
       );
   }
 

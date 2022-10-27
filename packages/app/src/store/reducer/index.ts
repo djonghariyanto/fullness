@@ -1,13 +1,19 @@
 import { ReactElement } from 'react';
 import { Action } from '../';
 import { Filter, ApplicationState, Session, StateError, Status, LoginEntry, RegisterEntry } from '../state';
-import { updateEvent, fetchEvent, toggleFilterMatch, setFilter, removeEmptyFilter, activateDialog, updateDialogResult, closeDialog, toggleMenuSide, setMenuSideComponent, closeMenuSide, activateMenuPopup, closeMenuPopup, startAuthenticatedSession, endAuthenticatedSession, throwError, setStatus, commitPage, loadPath, updateLoginEntry, updateRegisterEntry } from '../action';
+import { updateEvent, fetchEvent, toggleFilterMatch, fetchSearchTerm, gotoSearchResultIndex, setFilter, removeEmptyFilter, activateDialog, updateDialogResult, closeDialog, toggleMenuSide, setMenuSideComponent, closeMenuSide, activateSearchPopup, closeSearchPopup, updateResultTerm, activateMenuPopup, closeMenuPopup, startAuthenticatedSession, endAuthenticatedSession, throwError, setStatus, commitPage, loadPath, updateLoginEntry, updateRegisterEntry } from '../action';
 import { on, createReducer } from '@fullness/core';
 
 type Login = Parameters<typeof updateLoginEntry>[0];
 type Register = Parameters<typeof updateRegisterEntry>[0];
 type CommitPage = Parameters<typeof commitPage>[0];
 type LoadPath = Parameters<typeof loadPath>[0];
+type ActivateSearchPopup = Parameters<typeof activateSearchPopup>[0];
+
+const initialIndex = {
+  curr: 0,
+  prev: 0
+}
 
 const isNotEmptyFilter = (filter: Filter) =>
   filter.dates.length > 0 || filter.categories.length > 0
@@ -94,6 +100,77 @@ const _reduce = createReducer<ApplicationState>(
       hasMenuSideActivated: false
     },
     menuSide: null
+  })),
+
+  on<ApplicationState, ActivateSearchPopup>(activateSearchPopup, (state, searchPopup) => ({
+    ...state,
+    status: {
+      ...state.status,
+      hasSearchPopupActivated: true
+    },
+    searchPopup: {
+      ...state.searchPopup,
+      shouldUpdate: false,
+      shouldFetch: false,
+      index: initialIndex,
+      ...searchPopup
+    }
+  })),
+
+  on<ApplicationState, void>(closeSearchPopup, (state) => ({
+    ...state,
+    status: {
+      ...state.status,
+      hasSearchPopupActivated: false
+    }
+  })),
+
+  on<ApplicationState, void>(fetchSearchTerm, (state) => ({
+    ...state,
+    status: {
+      ...state.status,
+      hasSearchPopupActivated: true
+    },
+    searchPopup: {
+      ...state.searchPopup,
+      shoudFetch: true,
+      shouldUpdate: false,
+      index: {
+        prev: state.searchPopup.index.curr,
+        curr: 0
+      } 
+    }
+  })),
+
+  on<ApplicationState, { index: number, shouldUpdate: boolean }>(gotoSearchResultIndex, (state, payload) => {
+    const index = Object.assign({}, state.searchPopup.index);
+
+    return {
+      ...state,
+      searchPopup: {
+        ...state.searchPopup,
+        shouldFetch: false,
+        shouldUpdate: payload.shouldUpdate,
+        index: {
+          ...state.searchPopup.index,
+          curr: payload.index,
+          prev: index.curr
+        }
+      }
+    }
+  }),
+
+  on<ApplicationState, string[]>(updateResultTerm, (state, result) => ({
+    ...state,
+    status: {
+      ...state.status,
+      hasSearchPopupActivated: result.length > 0
+    },
+    searchPopup: {
+      ...state.searchPopup,
+      shouldFetch: false,
+      result
+    }
   })),
 
   on<ApplicationState, { Component: ReactElement }>(activateMenuPopup, (state, menuPopup) => ({

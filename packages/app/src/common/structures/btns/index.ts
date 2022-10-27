@@ -1,6 +1,7 @@
 export interface Props {
   children: React.ReactNode | React.ReactElement | React.ReactElement[]
   style?: React.CSSProperties,
+  onMouseOver?: React.ReactEventHandler,
   onClick?: React.ReactEventHandler,
   onClickCapture?: React.ReactEventHandler,
   selected?: boolean,

@@ -12,6 +12,17 @@
   --secondary-container-left: var(--separator18);
 }
 
+.popup--search {
+  margin: 8px 0;
+  --secondary-label-size: var(--size-sm);
+  --primary-container-left: var(--separator24);
+  --primary-container-right: var(--separator24);
+  --secondary-container-left: var(--separator18);
+  --flat-button-selected-bgcolor: var(--gb50);
+  --flat-button-hover-bgcolor: white;
+  --flat-button-selected-hover-bgcolor: var(--gb50);
+}
+
 .popup__header {
   padding: 24px;
 }

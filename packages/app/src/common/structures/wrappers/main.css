@@ -14,12 +14,12 @@
 
 .wrapper--primary-icon {
   --icon-stroke: var(--primary-icon-stroke);
-  --icon-fill: none;
+  --icon-fill: var(--primary-icon-fill, none);
 }
 
 .wrapper--secondary-icon {
   --icon-stroke: var(--secondary-icon-stroke);
-  --icon-fill: none;
+  --icon-fill: var(--secondary-icon-fill, none);
 }
 
 .wrapper--primary-icon-selected {

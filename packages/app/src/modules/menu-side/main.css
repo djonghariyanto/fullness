@@ -17,6 +17,8 @@
 @media (min-width: 801px) {
   .menu-side {
     background-color: unset;
+    z-index: unset;
+    width: unset;
   }
 }
 

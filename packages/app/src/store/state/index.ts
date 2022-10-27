@@ -22,9 +22,11 @@ export interface Status {
   submitEntry: boolean,
   authenticatedSession: boolean,
   hasDialogActivated: boolean,
+  hasSearchPopupActivated: boolean,
   hasMenuPopupActivated: boolean,
   hasMenuSideActivated: boolean,
   isFilterUsed: boolean,
+  filterMode: 'view' | 'edit',
   editMode: 'insert' | 'update',
   editFilterIndex: number,
   searchFilterIndex: number
@@ -39,6 +41,17 @@ export interface Dialog {
 export interface MenuPopup {
   Component?: ReactElement,
   byRef?: EventTarget & Element
+}
+
+export interface SearchPopup {
+  Component?: ReactElement,
+  byRef?: EventTarget & Element,
+  inputRef?: EventTarget & Element,
+  term?: string,
+  result?: string[],
+  shouldFetch?: boolean,
+  shouldUpdate?: boolean,
+  index?: { prev: number, curr: number }
 }
 
 export interface MenuSide {
@@ -81,6 +94,7 @@ export interface ApplicationState {
   dialog: Dialog,
   menuPopup: MenuPopup,
   menuSide: MenuSide,
+  searchPopup: SearchPopup,
   search: string,
   filters: Filter[],
   events: any[]
@@ -95,18 +109,21 @@ export const applicationState: ApplicationState = {
     submitEntry: false,
     authenticatedSession: false,
     hasDialogActivated: false,
+    hasSearchPopupActivated: false,
     hasMenuPopupActivated: false,
     hasMenuSideActivated: false,
     isFilterUsed: false,
     hasSearch: false,
+    filterMode: 'view',
     editMode: 'insert',
     editFilterIndex: 0,
-    searchFilterIndex:0
+    searchFilterIndex: 0
   },
   entry: null,
   session: null,
   error: null,
   dialog: null,
+  searchPopup: null,
   menuPopup: null,
   menuSide: null,
   search: "",

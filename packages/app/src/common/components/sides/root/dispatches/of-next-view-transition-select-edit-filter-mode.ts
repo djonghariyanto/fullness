@@ -1,4 +1,4 @@
-import { filter, withLatestFrom, map } from 'rxjs/operators';
+import { filter, withLatestFrom, map } from 'rxjs';
 
 import { Store, ofType } from '@/store';
 

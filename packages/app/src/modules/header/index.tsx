@@ -10,8 +10,14 @@ import fromSessionState from '@/common/renders/from-session-state';
 import AuthorizedNavigation from '@/common/components/navigations/authorized';
 import UnauthorizedNavigation from '@/common/components/navigations/unauthorized';
 import TouchButton from '@/common/components/buttons/touch';
+import BindBehavior from '@/common/components/binds/behavior';
+import FlatButton from '@/common/structures/btns/flat';
+import SecondaryContainer from '@/common/structures/containers/secondary';
+import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import DJIcon from '@/common/svgs/dj-icon';
 import OptionIcon from '@/common/svgs/option';
+import fromSideMenuToggleIcon from './renders/from-side-menu-toggle-icon';
 
 const base = _["header"];
 const iconBase = _["header__icon"];
@@ -36,12 +42,17 @@ export default function Header() {
         fromPageMenuSideOption<Render>(isAccesible => ({
           MenuSideButton: isAccesible
             ?
-            <TouchButton
-              forIcon={true}
-              onClick={() => dispatch(toggleMenuSide())}
-              style={{ marginRight: '8px' }}>
-              <OptionIcon />
-            </TouchButton>
+            <BindBehavior onObserve={fromSideMenuToggleIcon()}>
+              <FlatButton onClick={() => dispatch(toggleMenuSide())}>
+                <BindBehavior onObserve={fromSideMenuToggleIcon()}>
+                  <SecondaryIconWrapper>
+                    <Icon>
+                      <OptionIcon />
+                    </Icon>
+                  </SecondaryIconWrapper>
+                </BindBehavior>
+              </FlatButton>
+            </BindBehavior>
             : null
         }))
       ],
@@ -58,7 +69,9 @@ export default function Header() {
       <div className={navBase}>
         <div className={reverseBase}>
           {render.NavigationComponent}
-          {render.MenuSideButton}
+          <SecondaryContainer>
+            {render.MenuSideButton}
+          </SecondaryContainer>
         </div>
       </div>
     </nav>

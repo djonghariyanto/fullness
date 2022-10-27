@@ -2,9 +2,7 @@ import * as React from 'react';
 import { default as _ } from './main.css';
 
 import { useStore } from '@/store';
-import { FilterItem } from '@/store/state';
-import { subStore, closeDialog } from '@/store/action';
-import { toggleDate, toggleCategory } from '@/common/components/filter-group/store/action';
+import { closeDialog } from '@/store/action';
 import { nextInTransitionView } from '@/store/action';
 import OpaqueIconButton from '@/common/components/buttons/opaque-icon';
 import PrimaryIconButton from '@/common/structures/buttons/primary-icon';

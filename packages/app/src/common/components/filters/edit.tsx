@@ -18,11 +18,14 @@ import SearchInput from '@/common/components/input-texts/search';
 import TouchWrapper from '@/common/components/wrappers/touch';
 import fromEditFilterIndexStatus from './renders/from-edit-filter-index-status';
 import { rootSideMenuId, RootSideContext } from '@/common/components/sides/root';
+import { increaseOne } from '@/common/utility';
 
 export interface Render {
   Categories: React.ReactElement[],
   Dates: React.ReactElement[]
 }
+
+const generator = increaseOne(0);
 
 const base = [
   _["filter"],
@@ -124,7 +127,7 @@ export default function EditFilter() {
           </TouchWrapper>
         </PrimaryContainer>
         <PrimaryContainer>
-          <SearchInput />
+          <SearchInput onGenerate={generator} />
         </PrimaryContainer>
       </div>
       <div className={sectionWithDividerBase}>
