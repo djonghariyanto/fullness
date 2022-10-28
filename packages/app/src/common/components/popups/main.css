@@ -2,14 +2,17 @@
 }
 
 .popup--navigation {
-  --primary-button-bgcolor: #fff;
-  --primary-button-hover-bgcolor: var(--gb50);
+  --flat-button-bgcolor: #fff;
+  --flat-button-hover-bgcolor: var(--gb50);
   --primary-label-size: var(--size-mid);
   --primary-label-weigth: var(--weight-bold);
   --secondary-label-size: var(--size-sm);
   --primary-container-left: var(--separator24);
   --primary-container-right: var(--separator24);
   --secondary-container-left: var(--separator18);
+  --secondary-bgcolor: var(--sw700);
+  --secondary-radius: 24px;
+  --secondary-color: #fff;
 }
 
 .popup--search {

@@ -5,10 +5,12 @@ import { useStore } from '@/store';
 import { activateMenuPopup } from '@/store/action';
 import fromSessionState from '@/common/renders/from-session-state';
 import fromMenuPopupState from '@/common/renders/from-menu-popup-state';
-import IconButton from '@/common/components/buttons/icon';
+import PrimaryButton from '@/common/structures/btns/primary';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import BindBehavior from '@/common/components/binds/behavior';
 import NavigationPopup from '@/common/components/popups/navigation';
 
-const base = [_["navigation"], _["navigation--unauthorized"]].join(' ');
+const base = [_["navigation"], _["navigation--authorized"]].join(' ');
 
 interface Render {
   initial?: string,
@@ -19,25 +21,27 @@ export default function AuthorizedNavigation() {
   const { useRenderPipeline, dispatch } = useStore(),
     render = useRenderPipeline<Render>(
       [
-        fromSessionState(([, session]) => ({ 
-          initial: session.username.toUpperCase()[0] 
-        })),
-        fromMenuPopupState(([activated]) => ({
-          toggled: activated
+        fromSessionState(([, session]) => ({
+          initial: session.username.toUpperCase()[0]
         }))
       ],
-      { initial: null, toggled: false }
+      { initial: null }
     ),
     Component = React.useMemo(() => <NavigationPopup />, []);
 
   return (
     <div className={base}>
-      <IconButton
-        toggled={render.toggled}
-        onClick={(e) => dispatch(activateMenuPopup({ Component, byRef: e.currentTarget }))}
-      >
-        {render.initial}
-      </IconButton>
+      <PrimaryIconWrapper>
+        <BindBehavior 
+          onObserve={fromMenuPopupState(([ selected ]) => ({ selected }))}
+        >
+          <PrimaryButton
+            onClick={(e) => dispatch(activateMenuPopup({ Component, byRef: e.currentTarget }))}
+          >
+            {render.initial}
+          </PrimaryButton>
+        </BindBehavior>
+      </PrimaryIconWrapper>
     </div>
   );
 }

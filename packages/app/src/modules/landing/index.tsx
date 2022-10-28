@@ -28,10 +28,10 @@ export default function Landing(): React.ReactElement {
       <Header />
       <MenuSide />
       <Content>
-        <Root page={ "Root" } pathname={ "/" } />
-        <Create page={ "Create" } pathname={ "/create" } />
-        <Login page={ "Login" } pathname={ "/login" } />
-        <Logout page={ "Logout" } pathname={ "/logout" } />
+        <Root page={"Root"} pathname={"/"} />
+        <Create page={"Create"} pathname={"/create"} />
+        <Login page={"Login"} pathname={"/login"} />
+        <Logout page={"Logout"} pathname={"/logout"} />
       </Content>
       <Dialog />
       <SearchPopup />

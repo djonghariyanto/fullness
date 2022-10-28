@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { distinctUntilKeyChanged, withLatestFrom, map } from 'rxjs/operators';
+import { distinctUntilKeyChanged, Observable,  withLatestFrom, map } from 'rxjs';
 import { Store } from '@/store';
 import { MenuSide } from '@/store/state';
 

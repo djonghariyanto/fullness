@@ -5,7 +5,7 @@ import { useStore } from '@/store';
 import { loginUser, updateLoginEntry } from '@/store/action';
 
 import StretchInputText from '../input-texts/stretch';
-import RoundedButton from '../buttons/rounded';
+import PrimaryButton from '@/common/structures/btns/primary';
 import loginUserEffect from './effects/login-user';
 import initLoginEntry from './dispatches/init-login-entry';
 import applyError from './renders/apply-error';
@@ -14,7 +14,7 @@ import resetErrorOnClick from '@/common/events/reset-error-onclick';
 import submitEntry from './events/submit-entry';
 import verifySession from './dispatches/verify-session';
 import selectError from '@/common/renders/select-error';
-import ExtraSmallTitle from '@/common/components/titles/extra-small';
+import PrimaryTitle from '@/common/structures/titles/primary';
 
 export interface Render {
   disabled: boolean,
@@ -55,9 +55,9 @@ export default function LoginForm() {
   return (
     <div className={base}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <ExtraSmallTitle weight="medium">
+        <PrimaryTitle>
           Signin user
-        </ExtraSmallTitle>
+        </PrimaryTitle>
       </div>
       <div style={{ margin: '24px 0 0 0' }} />
       <form ref={ref} onSubmit={() => dispatch(loginUser())}>
@@ -82,9 +82,9 @@ export default function LoginForm() {
           {render.AuthenticationError}
         </div>
         <div style={{ margin: '16px 0 0 0' }} />
-        <RoundedButton disabled={render.disabled}>
+        <PrimaryButton disabled={render.disabled}>
           Submit
-        </RoundedButton>
+        </PrimaryButton>
       </form>
     </div>
   );

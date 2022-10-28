@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  --primary-title-size: var(--size-txs);
+  --primary-title-weight: var(--weight-medium);
 }
 
 .login__content {

@@ -3,6 +3,12 @@
   border-radius: 8px;
   margin: 36px;
   width: 280px;
+  --primary-title-size: var(--size-txs);
+  --primary-title-weight: var(--weight-medium);
+  --primary-button-radius: 20px;
+  --primary-button-bgcolor: var(--g600);
+  --primary-button-color: #fff;
+  --primary-button-hover-bgcolor: var(--g700);
 }
 
 .signup-form__message {

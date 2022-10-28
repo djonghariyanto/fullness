@@ -2,16 +2,16 @@ import { distinctUntilKeyChanged, map } from 'rxjs';
 import { Store } from '@/store';
 import { isMenuSideAccessible } from '@/pages';
 
-const fromPageMenuSideOption = (fn: any) =>
+const fromPageMenuSideOption = (Component: React.ReactElement) =>
   ({ state }: Store) => {
     return state
       .pipe(
         map(state => state.status),
         distinctUntilKeyChanged('currentPage'),
-        map(status => [isMenuSideAccessible(status.currentPage), status.hasMenuSideActivated]),
-        map(([accesible, activated]) => (render: any) => ({
+        map(status => isMenuSideAccessible(status.currentPage)),
+        map(activated => (render: any) => ({
           ...render,
-          ...fn([accesible, activated])
+          MenuSide: activated ? Component : null
         }))
       );
   }

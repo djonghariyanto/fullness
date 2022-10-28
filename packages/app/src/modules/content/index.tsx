@@ -9,7 +9,6 @@ import ofLoadPathDoVerifyPath from './dispatches/of-load-path-do-verify-path';
 import onPopstateDispatchLoadPath from './dispatches/on-popstate-dispatch-load-path';
 import ofCommitPageUpdateLocationHistory from './effects/of-commit-page-update-location-history';
 
-
 interface Props {
   children: React.ReactElement[]
 }
@@ -31,10 +30,10 @@ export default function Content(props: Props) {
         fromMenuSideState<Render>(([hasActivated]) => ({
           className: hasActivated ? adjustedBase : base
         })),
-        fromPageMenuSideOption<Render>(isAccessible => isAccessible
-          ? null 
+        fromPageMenuSideOption(([accessible, activated]) => accessible && activated
+          ? { className: adjustedBase }
           : { className: base }
-        )
+        ),
       ],
       { CurrentPage: null, className: base }
     );

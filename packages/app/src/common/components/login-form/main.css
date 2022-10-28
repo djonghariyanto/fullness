@@ -1,6 +1,10 @@
 .login-form {
   box-sizing: content-box;
   border-radius: 8px;
+  --primary-button-radius: 20px;
+  --primary-button-bgcolor: var(--g600);
+  --primary-button-color: #fff;
+  --primary-button-hover-bgcolor: var(--g700);
 }
 
 .login-form__message {

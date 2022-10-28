@@ -4,13 +4,14 @@ import Style from '@/common/css';
 
 import { useStore, Store } from '@/store';
 import { loadPath } from '@/store/action';
-import IconButton from '@/common/components/buttons/icon';
 import SignoutIcon from '@/common/svgs/signout';
 import PrimaryLabel from '@/common/structures/labels/primary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import FlatButton from '@/common/structures/btns/flat';
 import Inline from '@/common/structures/inline';
+import SecondaryWrapper from '@/common/structures/wrappers/secondary';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import Icon from '@/common/structures/wrappers/common/component.icon';
 import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryContainer from '@/common/structures/containers/secondary';
@@ -43,9 +44,11 @@ export default function NavigationPopup() {
     <div ref={ref} className={base}>
       <div className={headerBase}>
         <Inline>
-          <IconButton style={{ cursor: 'unset' }}>
-            {render.username?.toUpperCase()[0]}
-          </IconButton>
+          <SecondaryWrapper>
+            <SecondaryIconWrapper>
+              {render.username?.toUpperCase()[0]}
+            </SecondaryIconWrapper>
+          </SecondaryWrapper>
           <SecondaryContainer>
             <PrimaryLabel>
               {render.username}

@@ -12,6 +12,10 @@
   --flat-button-selected-radius: 24px;
   --flat-button-radius: 24px;
   --flat-button-hover-bgcolor: var(--gb100);
+  --primary-button-color: #fff;
+  --primary-button-bgcolor: var(--sw700);
+  --primary-button-hover-bgcolor: var(--sw800);
+  --primary-button-radius: 24px;
   --secondary-icon-fill: var(--gb900);
   --secondary-icon-fill-selected: #fff;
   --secondary-container-right: 8px;

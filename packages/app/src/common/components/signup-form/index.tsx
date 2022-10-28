@@ -5,9 +5,9 @@ import { useStore } from '@/store';
 import { RegisterEntry } from '@/store/state';
 import { registerUser, updateRegisterEntry } from '@/store/action';
 
-import ExtraSmallTitle from '@/common/components/titles/extra-small';
+import PrimaryTitle from '@/common/structures/titles/primary';
 import StretchInputText from '../input-texts/stretch';
-import RoundedButton from '../buttons/rounded';
+import PrimaryButton from '@/common/structures/btns/primary';
 import ErrorMessage from '@/common/components/messages/error';
 import preventDefaultOnSubmit from '@/common/events/prevent-default-onsubmit';
 import resetErrorOnClick from '@/common/events/reset-error-onclick';
@@ -62,9 +62,9 @@ export default function SignupForm() {
   return (
     <div className={base}>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <ExtraSmallTitle weight="medium">
+        <PrimaryTitle>
           Sign up
-        </ExtraSmallTitle>
+        </PrimaryTitle>
       </div>
       <div style={{ margin: '24px 0 0 0' }} />
       <form ref={ref} onSubmit={() => dispatch(registerUser())}>
@@ -98,9 +98,9 @@ export default function SignupForm() {
         <div style={{ margin: '4px 0 42px 0', position: 'relative' }}>
           {render.Password}
         </div>
-        <RoundedButton disabled={render.disabled}>
+        <PrimaryButton disabled={render.disabled}>
           Submit
-        </RoundedButton>
+        </PrimaryButton>
       </form>
     </div>
   );

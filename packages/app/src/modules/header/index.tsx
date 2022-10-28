@@ -9,10 +9,10 @@ import fromPageMenuSideOption from '@/common/renders/from-page-menu-side-option'
 import fromSessionState from '@/common/renders/from-session-state';
 import AuthorizedNavigation from '@/common/components/navigations/authorized';
 import UnauthorizedNavigation from '@/common/components/navigations/unauthorized';
-import TouchButton from '@/common/components/buttons/touch';
 import BindBehavior from '@/common/components/binds/behavior';
 import FlatButton from '@/common/structures/btns/flat';
 import SecondaryContainer from '@/common/structures/containers/secondary';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
 import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import Icon from '@/common/structures/wrappers/common/component.icon';
 import DJIcon from '@/common/svgs/dj-icon';
@@ -39,7 +39,7 @@ export default function Header() {
             ? <AuthorizedNavigation />
             : <UnauthorizedNavigation />
         })),
-        fromPageMenuSideOption<Render>(isAccesible => ({
+        fromPageMenuSideOption(([ isAccesible ]) => ({
           MenuSideButton: isAccesible
             ?
             <BindBehavior onObserve={fromSideMenuToggleIcon()}>
@@ -62,9 +62,13 @@ export default function Header() {
   return (
     <nav className={base}>
       <div className={iconBase}>
-        <TouchButton onClick={() => dispatch(loadPath({ pathname: '/' }))}>
-          <DJIcon style={{ width: 'inherit', height: 'inherit' }} />
-        </TouchButton>
+        <PrimaryIconWrapper>
+          <FlatButton
+            onClick={() => dispatch(loadPath({ pathname: '/' }))}
+          >
+            <DJIcon/>
+          </FlatButton>
+        </PrimaryIconWrapper>
       </div>
       <div className={navBase}>
         <div className={reverseBase}>

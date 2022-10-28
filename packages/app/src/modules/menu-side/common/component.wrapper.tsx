@@ -11,8 +11,8 @@ export default function Wrapper() {
   const { useDispatchPipeline, useRenderPipeline } = useStore(),
     render = useRenderPipeline(
       [
-        fromMenuSideState(([, menuSide]) => ({
-          MenuSide: menuSide.Component
+        fromMenuSideState(([activated, menuSide]) => ({
+          MenuSide: activated ? menuSide.Component : null
         }))
       ],
       { MenuSide: null }

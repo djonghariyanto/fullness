@@ -1,4 +1,6 @@
 .calender {
+  --primary-container-left: auto;
+  --primary-container-right: auto;
 }
 
 .calender--default {

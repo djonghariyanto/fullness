@@ -38,12 +38,13 @@
 }
 
 .wrapper--secondary {
-  background-color: var(--gb50);
-  color: var(--gb900);
+  background-color: var(--secondary-bgcolor);
+  color: var(--secondary-color);
+  border-radius: var(--secondary-radius);
 }
 
 .wrapper--flat {
-  color: var(--gb900);
+  color: var(--flat-color);
   background-color: unset;
 }
 

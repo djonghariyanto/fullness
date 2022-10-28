@@ -9,9 +9,9 @@ import { useStore } from '@/store';
 import { SHORTDAYS, MONTHS, SHORTMONTHS } from './';
 import onInitSetMonthTransitionView from './dispatches/on-init-set-month-transition-view';
 import FlatButton from '@/common/structures/btns/flat';
+import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import TransitionView, { TransitionViewWrapper } from '@/common/components/transition-view';
-import PointedButton from '@/common/components/buttons/pointed';
 import ofSubStoreToggleDate from './renders/of-sub-store-toggle-date';
 import BindBehavior from '@/common/components/binds/behavior';
 import ofViewTransitionUpdateDates from './renders/of-view-transition-update-dates';
@@ -55,32 +55,35 @@ export default function DefaultCalender() {
   return (
     <div className={base}>
       <div className={monthChild}>
-        <PointedButton
-          direction="left"
-          onClick={() => dispatch(previousInTransitionView({ id: [previousMonthId, currentMonthId, nextMonthId] }))}
-        >
-          <TransitionViewWrapper style={{ width: '64px' }}>
-            <TransitionView id={previousMonthId}>
-              {SHORTMONTHS.map((i, key) => <span key={key}>{i}</span>)}
-            </TransitionView>
-          </TransitionViewWrapper>
-        </PointedButton>
-        <div>
+        <PrimaryContainer>
+          <FlatButton
+            onClick={() => dispatch(previousInTransitionView({ id: [previousMonthId, currentMonthId, nextMonthId] }))}
+          >
+            <TransitionViewWrapper style={{ width: '64px' }}>
+              <TransitionView id={previousMonthId}>
+                {SHORTMONTHS.map((i, key) => <span key={key}>{i}</span>)}
+              </TransitionView>
+            </TransitionViewWrapper>
+          </FlatButton>
+        </PrimaryContainer>
+        <PrimaryContainer>
           <TransitionViewWrapper style={{ width: '200px' }}>
             <TransitionView id={currentMonthId}>
               {MONTHS.map(i => <span key={i}>{i} {render.calender?.current.getFullYear()}</span>)}
             </TransitionView>
           </TransitionViewWrapper>
-        </div>
-        <PointedButton
-          onClick={() => dispatch(nextInTransitionView({ id: [previousMonthId, currentMonthId, nextMonthId] }))}
-        >
-          <TransitionViewWrapper style={{ width: '64px' }}>
-            <TransitionView id={nextMonthId}>
-              {SHORTMONTHS.map((i, key) => <span key={key}>{i}</span>)}
-            </TransitionView>
-          </TransitionViewWrapper>
-        </PointedButton>
+        </PrimaryContainer>
+        <PrimaryContainer>
+          <FlatButton
+            onClick={() => dispatch(nextInTransitionView({ id: [previousMonthId, currentMonthId, nextMonthId] }))}
+          >
+            <TransitionViewWrapper style={{ width: '64px' }}>
+              <TransitionView id={nextMonthId}>
+                {SHORTMONTHS.map((i, key) => <span key={key}>{i}</span>)}
+              </TransitionView>
+            </TransitionViewWrapper>
+          </FlatButton>
+        </PrimaryContainer>
       </div>
       <div className={dayChild}>
         {SHORTDAYS.map(day => <span key={day}>{day}</span>)}

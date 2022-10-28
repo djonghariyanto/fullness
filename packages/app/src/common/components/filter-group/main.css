@@ -14,6 +14,14 @@
   --flat-button-hidden-hover-bgcolor: #fff;
   --flat-button-radius: 24px;
   --flat-button-selected-radius: 24px;
+  --primary-button-bgcolor: var(--s300);
+  --primary-button-hover-bgcolor: var(--s400);
+  --primary-button-radius: 24px;
+  --primary-icon-fill: var(--gb900);
+  --secondary-container-right: 8px;
+  --primary-label-size: var(--size-sm);
+  --primary-label-color: var(--gb500);
+  --primary-label-weigth: var(--weight-regular);
 }
 
 .filter-group--dialog {

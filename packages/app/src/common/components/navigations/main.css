@@ -2,7 +2,22 @@
 }
 
 .navigation--authorized {
+  --primary-button-selected-radius: 24px;
+  --primary-button-selected-bstyle: solid;
+  --primary-button-selected-bwidth: 1px;
 }
 
 .navigation--unauthorized {
+  --secondary-button-bgcolor: inherit;
+  --secondary-button-color: var(--g700);
+  --secondary-button-radius: 20px;
+  --secondary-button-bstyle: solid;
+  --secondary-button-bcolor: var(--g700);
+  --secondary-button-bwidth: 1px;
+  --secondary-button-hover-bgcolor: var(--g700);
+  --secondary-button-hover-color: #fff;
+  --secondary-container-left: 16px;
+  --secondary-container-right: 16px;
+  --secondary-label-size: var(--size-sm);
+  --secondary-label-weight: var(--weight-regular);
 }

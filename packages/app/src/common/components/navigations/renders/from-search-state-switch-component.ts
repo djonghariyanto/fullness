@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { map, distinctUntilKeyChanged, withLatestFrom } from 'rxjs/operators';
+import { Observable, map, distinctUntilKeyChanged, withLatestFrom } from 'rxjs';
 import { Store } from '@/store';
 
 const fromSearchStateSwitchComponent: <T>(Login: React.ReactElement, Signup: React.ReactElement) => (store: Store) => Observable<(render: T) => T> = (Login, Signup) =>

@@ -4,15 +4,18 @@ import { default as _ } from './main.css';
 import { useStore } from '@/store';
 import { closeDialog } from '@/store/action';
 import { nextInTransitionView } from '@/store/action';
-import OpaqueIconButton from '@/common/components/buttons/opaque-icon';
-import PrimaryIconButton from '@/common/structures/buttons/primary-icon';
-import IconWrapper from '@/common/components/wrappers/icon';
+import SecondaryContainer from '@/common/structures/containers/secondary';
+import FlatButton from '@/common/structures/btns/flat';
+import PrimaryButton from '@/common/structures/btns/primary';
+import Icon from '@/common/structures/wrappers/common/component.icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import TransitionView, { TransitionViewWrapper } from '@/common/components/transition-view';
 import DefaultCategory from '@/common/components/categories/default';
 import DefaultCalender from '@/common/components/calenders/default';
 import TouchWrapper from '@/common/components/wrappers/touch';
 import Inline, { InlineItem } from '@/common/structures/inline';
-import NavigationItemLabel from '@/common/components/labels/navigation-item';
+import PrimaryLabel from '@/common/structures/labels/primary';
 import SignIcon from '@/common/svgs/sign';
 import TickIcon from '@/common/svgs/tick';
 import ofSubStore from './dispatches/of-sub-store';
@@ -48,38 +51,46 @@ export default function FilterGroup() {
             <TransitionViewWrapper style={{ width: '160px' }}>
               <TransitionView id={filterTitleId}>
                 <TouchWrapper>
-                  <NavigationItemLabel>
+                  <PrimaryLabel>
                     CATEGORY
-                  </NavigationItemLabel>
+                  </PrimaryLabel>
                 </TouchWrapper>
                 <TouchWrapper>
-                  <NavigationItemLabel>
+                  <PrimaryLabel>
                     DATE
-                  </NavigationItemLabel>
+                  </PrimaryLabel>
                 </TouchWrapper>
               </TransitionView>
             </TransitionViewWrapper>
           </InlineItem>
           <InlineItem>
-            <OpaqueIconButton
-              onClick={() => dispatch(nextInTransitionView({ id: [filterTitleId, filterGroupId] }))}
-            >
-              <IconWrapper style={{ cursor: 'unset' }}>
-                <SignIcon />
-              </IconWrapper>
-            </OpaqueIconButton>
-            <PrimaryIconButton
+            <SecondaryContainer>
+              <FlatButton
+                onClick={() => dispatch(nextInTransitionView({ id: [filterTitleId, filterGroupId] }))}
+              >
+                <SecondaryIconWrapper>
+                  <Icon>
+                    <SignIcon />
+                  </Icon>
+                </SecondaryIconWrapper>
+              </FlatButton>
+            </SecondaryContainer>
+            <PrimaryButton
               onClick={() => dispatch(closeDialog({ withConfirmation: true }))}
             >
-              <TickIcon />
-            </PrimaryIconButton>
+              <PrimaryIconWrapper>
+                <Icon>
+                  <TickIcon />
+                </Icon>
+              </PrimaryIconWrapper>
+            </PrimaryButton>
           </InlineItem>
         </Inline>
       </div>
       <div className={contentChild}>
         <TransitionView id={filterGroupId} observe={true}>
-          <DefaultCategory/>
-          <DefaultCalender/>
+          <DefaultCategory />
+          <DefaultCalender />
         </TransitionView>
       </div>
     </div>
