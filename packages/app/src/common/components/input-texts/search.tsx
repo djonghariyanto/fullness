@@ -8,8 +8,6 @@ import IconWrapper from '@/common/components/wrappers/icon';
 import SearchResultPopup from '@/common/components/popups/search';
 import onElementKeypress from '@/common/dispatches/on-element-keypress';
 import keySearchReducer from './common/util.key-search-reducer';
-import keyMainReducer from './common/util.key-search-reducer';
-import preventSearchReducer from './common/util.prevent-search-reducer';
 
 const commitValue = '[Search Input] commit value';
 
@@ -32,7 +30,7 @@ export default function Search(props: { onGenerate?: Generator<number> }) {
     inputRef = React.useRef(null);
 
   useDispatchPipeline(
-    onElementKeypress(inputRef, keySearchReducer, preventSearchReducer)
+    onElementKeypress(inputRef, keySearchReducer)
   );
 
   return (

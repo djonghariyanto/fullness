@@ -13,8 +13,7 @@ import Icon from '@/common/structures/wrappers/common/component.icon';
 import BindBehavior from '@/common/components/binds/behavior';
 import fromSearchPopupState from '@/common/renders/from-search-popup-state';
 import onKeypress from '@/common/dispatches/on-keypress';
-import searchKeyReducer from './common/util.search-key-reducer';
-import preventDefaultReducer from './common/util.prevent-default-reducer';
+import searchKeyReducer, { defaultedKeys } from './common/util.search-key-reducer';
 import onInit from './dispatches/on-init';
 import ofSubStoreProcessAction from './dispatches/of-sub-store-process-action';
 import fromStoreSelectItem from './renders/from-store-select-item';
@@ -64,7 +63,7 @@ export default function SearchResultPopup() {
   useDispatchPipeline(
     [
       onInit(),
-      onKeypress(searchKeyReducer, preventDefaultReducer),
+      onKeypress(searchKeyReducer, defaultedKeys),
       ofSubStoreProcessAction(),
     ],
   );

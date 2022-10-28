@@ -5,8 +5,7 @@ import { useStore } from '@/store';
 import { closeDialog } from '@/store/action';
 import loadDialog from './renders/load-dialog';
 import onKeypress from '@/common/dispatches/on-keypress';
-import keyHandler from './common/util.key-handler';
-import prevent from './common/util.prevent';
+import keyHandler, { defaultedKeys } from './common/util.key-handler';
 
 export interface Render {
   Content: null
@@ -21,7 +20,7 @@ export function DialogWrapper(props: { withClose?: boolean, children: React.Reac
     { useDispatchPipeline, dispatch } = useStore();
 
   useDispatchPipeline(
-    onKeypress(keyHandler, prevent)
+    onKeypress(keyHandler, defaultedKeys)
   );
 
   return (
@@ -30,7 +29,7 @@ export function DialogWrapper(props: { withClose?: boolean, children: React.Reac
         {
           withClose
           &&
-            <button className={closeBase} onClick={() => dispatch(closeDialog({ withConfirmation: false }))}>
+          <button className={closeBase} onClick={() => dispatch(closeDialog({ withConfirmation: false }))}>
             X
           </button>
         }

@@ -18,7 +18,7 @@ import SearchInput from '@/common/components/input-texts/search';
 import TouchWrapper from '@/common/components/wrappers/touch';
 import fromEditFilterIndexStatus from './renders/from-edit-filter-index-status';
 import { rootSideMenuId, RootSideContext } from '@/common/components/sides/root';
-import { increaseOne } from '@/common/utility';
+import { increaseOne } from '@/common/utils';
 
 export interface Render {
   Categories: React.ReactElement[],

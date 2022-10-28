@@ -1,4 +1,4 @@
-import { fromEventPattern, map, connect, switchMap, EMPTY, merge, filter, Observable } from 'rxjs';
+import { exhaustMap, of, fromEventPattern, filter, Observable, tap } from 'rxjs';
 
 const createPattern = (() => {
   let list = [];
@@ -19,7 +19,7 @@ const createPattern = (() => {
   }
 })();
 
-const bind = (ref: React.MutableRefObject<Window | Document| Element>): Observable<KeyboardEvent> => {
+const bind = (ref: React.MutableRefObject<Window | Document | Element>): Observable<KeyboardEvent> => {
   const stack = createPattern(ref);
 
   return fromEventPattern(
@@ -28,26 +28,20 @@ const bind = (ref: React.MutableRefObject<Window | Document| Element>): Observab
   );
 }
 
-const onElementKeypress = (ref: React.MutableRefObject<Window | Document | Element>, fn: any, preventFn: (key: string) => boolean = () => false) =>
+const onElementKeypress = (ref: React.MutableRefObject<Window | Document | Element>, fn: any, defaultedKeys?: string[]) =>
   () => {
-    const preventDefault = (obs: Observable<Event>) => obs
-      .pipe(
-        filter(e => preventFn((<KeyboardEvent>e).key)),
-        map((e: Event) => e.preventDefault()),
-        switchMap(() => EMPTY)
-      );
-
     return bind(ref)
       .pipe(
         filter(ev => !ev.defaultPrevented),
-        connect(obs => merge(
-          preventDefault(obs),
-          obs
-            .pipe(
-              map(e => fn((<KeyboardEvent>e).key, e)),
-              filter(action => action !== undefined)
+        exhaustMap(ev => of(fn(ev.key, ev))
+          .pipe(
+            filter(action => action !== undefined),
+            tap(() => defaultedKeys?.includes((<KeyboardEvent>ev).key)
+              ? ev.preventDefault()
+              : null
             )
-        ))
+          )
+        )
       );
   }
 
