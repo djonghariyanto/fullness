@@ -4,7 +4,7 @@ import { default as _ } from '../main.css';
 import { useStore } from '@/store';
 import { addFilter, gotoSearchResultIndex } from '@/store/action';
 import SearchIcon from '@/common/svgs/search';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import Inline from '@/common/structures/inline';
 import SecondaryContainer from '@/common/structures/containers/secondary';
 import SecondaryLabel from '@/common/structures/labels/secondary';

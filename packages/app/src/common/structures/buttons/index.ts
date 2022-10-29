@@ -1,23 +1,17 @@
-import { default as _ } from './main.css';
-
-export interface IconButtonProps {
-  children: React.ReactElement | React.ReactNode,
+export interface Props {
+  children: React.ReactNode | React.ReactElement | React.ReactElement[]
   style?: React.CSSProperties,
+  onMouseOver?: React.ReactEventHandler,
   onClick?: React.ReactEventHandler,
+  onClickCapture?: React.ReactEventHandler,
   selected?: boolean,
   disabled?: boolean,
   hidden?: boolean
 }
 
-const iconBase = [
-  _["btn"],
-  _["btn--icon"]
-].join(' ');
+export const initialProps = {
+  hidden: false,
+  selected: false,
+  disabled: false
+}
 
-const iconChild = _["btn--icon__content"];
-
-const buttonBase = [
-  _["btn"]
-].join(' ');
-
-export { iconBase, iconChild, buttonBase }

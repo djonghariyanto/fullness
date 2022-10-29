@@ -44,8 +44,11 @@
 }
 
 .wrapper--flat {
-  color: var(--flat-color);
-  background-color: unset;
+  background-color: unset; 
+  color: var(--flat-color, inherit);
+  height: var(--flat-height, auto);
+  width: var(--flat-width, inherit);
+  display: var(--flat-display);
 }
 
 .wrapper--title {

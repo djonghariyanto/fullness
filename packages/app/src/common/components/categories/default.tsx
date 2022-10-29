@@ -5,7 +5,7 @@ import { useStore } from '@/store';
 import { subStore } from '@/store/action';
 import { toggleCategory } from '@/common/components/filter-group/store/action';
 import BindBehavior from '@/common/components/binds/behavior';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import ofSubStoreToggleCategory from './renders/of-sub-store-toggle-category';
 import onInit from './renders/on-init';
 

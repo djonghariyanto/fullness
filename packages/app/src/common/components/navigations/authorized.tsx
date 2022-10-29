@@ -5,7 +5,7 @@ import { useStore } from '@/store';
 import { activateMenuPopup } from '@/store/action';
 import fromSessionState from '@/common/renders/from-session-state';
 import fromMenuPopupState from '@/common/renders/from-menu-popup-state';
-import PrimaryButton from '@/common/structures/btns/primary';
+import PrimaryButton from '@/common/structures/buttons/primary';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
 import BindBehavior from '@/common/components/binds/behavior';
 import NavigationPopup from '@/common/components/popups/navigation';

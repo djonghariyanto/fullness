@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { default as _ } from './main.css'; import { useStore } from '@/store';
-
 import { activateDialog, previousInTransitionView, setFilter } from '@/store/action';
 import { FilterItem } from '@/store/state';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
@@ -8,14 +7,14 @@ import Icon from '@/common/structures/wrappers/common/component.icon';
 import AddIcon from '@/common/svgs/add';
 import DashIcon from '@/common/svgs/dash';
 import ArrowIcon from '@/common/svgs/arrow';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import PrimaryLabel from '@/common/structures/labels/primary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import Inline from '@/common/structures/inline';
 import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryContainer from '@/common/structures/containers/secondary';
 import SearchInput from '@/common/components/input-texts/search';
-import TouchWrapper from '@/common/components/wrappers/touch';
+import FlatWrapper from '@/common/structures/wrappers/flat';
 import fromEditFilterIndexStatus from './renders/from-edit-filter-index-status';
 import { rootSideMenuId, RootSideContext } from '@/common/components/sides/root';
 import { increaseOne } from '@/common/utils';
@@ -119,25 +118,25 @@ export default function EditFilter() {
         </FlatButton>
       </div>
       <div className={sectionWithDividerBase}>
-        <PrimaryContainer>
-          <TouchWrapper>
+        <FlatWrapper>
+          <PrimaryContainer>
             <PrimaryLabel>
               SEARCH KEYWORD
             </PrimaryLabel>
-          </TouchWrapper>
-        </PrimaryContainer>
+          </PrimaryContainer>
+        </FlatWrapper>
         <PrimaryContainer>
           <SearchInput onGenerate={generator} />
         </PrimaryContainer>
       </div>
       <div className={sectionWithDividerBase}>
-        <PrimaryContainer>
-          <TouchWrapper>
+        <FlatWrapper>
+          <PrimaryContainer>
             <PrimaryLabel>
               CATEGORY
             </PrimaryLabel>
-          </TouchWrapper>
-        </PrimaryContainer>
+          </PrimaryContainer>
+        </FlatWrapper>
         <FlatButton
           onClick={() => dispatch(activateDialog({ Component: FilterGroup, payload: 1 }))}
         >
@@ -159,13 +158,13 @@ export default function EditFilter() {
         {render.Categories}
       </div>
       <div className={sectionWithDividerBase}>
-        <PrimaryContainer>
-          <TouchWrapper>
+        <FlatWrapper>
+          <PrimaryContainer>
             <PrimaryLabel>
               DAY STATUS
             </PrimaryLabel>
-          </TouchWrapper>
-        </PrimaryContainer>
+          </PrimaryContainer>
+        </FlatWrapper>
         <FlatButton
           onClick={() => dispatch(activateDialog({ Component: null }))}
         >
@@ -186,13 +185,13 @@ export default function EditFilter() {
         </FlatButton>
       </div>
       <div className={sectionWithDividerBase}>
+          <FlatWrapper>
         <PrimaryContainer>
-          <TouchWrapper>
             <PrimaryLabel>
               FIND BY DATE
             </PrimaryLabel>
-          </TouchWrapper>
         </PrimaryContainer>
+          </FlatWrapper>
         <FlatButton
           onClick={() => dispatch(activateDialog({ Component: FilterGroup, payload: 2 }))}
         >

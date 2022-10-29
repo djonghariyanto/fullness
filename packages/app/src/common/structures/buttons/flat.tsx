@@ -1,31 +1,31 @@
 import * as React from 'react';
-import { buttonBase, IconButtonProps } from './';
+import { Props, initialProps } from './index';
 import { default as _ } from './main.css';
 
-const base = [buttonBase, _["btn--flat"]].join(' ');
-const selectedBase = [base, _["btn--flat-selected"]].join(' ');
-const hiddenBase = [base, _["btn--hidden"]].join(' ');
-const disabledBase = [base, _["btn--flat-disabled"]].join(' ');
+const base = [
+  _["button"],
+  _["button--flat"]
+].join(' ');
 
-const switchBase = (selected: boolean, disabled: boolean, hidden: boolean) =>
+const switchClass = (selected: boolean, hidden: boolean, disabled: boolean) =>
   hidden
-    ? hiddenBase
+    ? [base, _["button--flat-hidden"]].join(' ')
     : disabled
-      ? disabledBase
+      ? [base, _["button--flat-disabled"]].join(' ')
       : selected
-        ? selectedBase
+        ? [base, _["button--flat-selected"]].join(' ')
         : base
 
-const FlatButton = React.forwardRef(function FlatButton(props: IconButtonProps, ref: React.Ref<HTMLButtonElement>) {
-  const { children, selected, disabled, hidden, ...rest } = Object.assign(
-    {}, { hidden: false, selected: false, disabled: false }, props),
-    finalBase = switchBase(selected, disabled, hidden);
+
+export default function FlatButton(props: Props) {
+  const { children, selected, hidden, disabled, ...rest } = Object.assign({}, initialProps, props);
 
   return (
-    <button ref={ref} className={finalBase} {...rest}>
+    <button
+      className={switchClass(selected, hidden, disabled)}
+      {...rest}
+    >
       {children}
     </button>
   );
-});
-
-export default FlatButton;
+}

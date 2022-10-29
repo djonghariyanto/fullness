@@ -4,7 +4,8 @@ import { default as _ } from './main.css';
 import { useStore } from '@/store';
 import { activateSearchPopup, fetchSearchTerm } from '@/store/action';
 import SearchIcon from '@/common/svgs/search';
-import IconWrapper from '@/common/components/wrappers/icon';
+import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
+import Icon from '@/common/structures/wrappers/common/component.icon';
 import SearchResultPopup from '@/common/components/popups/search';
 import onElementKeypress from '@/common/dispatches/on-element-keypress';
 import keySearchReducer from './common/util.key-search-reducer';
@@ -36,9 +37,11 @@ export default function Search(props: { onGenerate?: Generator<number> }) {
   return (
     <div ref={ref} className={base}>
       <label htmlFor={`search-input${index}`} className={iconBase}>
-        <IconWrapper>
-          <SearchIcon />
-        </IconWrapper>
+        <PrimaryIconWrapper>
+          <Icon>
+            <SearchIcon />
+          </Icon>
+        </PrimaryIconWrapper>
       </label>
       <input
         ref={inputRef}

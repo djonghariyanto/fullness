@@ -5,11 +5,11 @@ import { useStore } from '@/store';
 import ViewFilterSection from './common/component.view-filter-section';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
 import Icon from '@/common/structures/wrappers/common/component.icon';
-import TouchWrapper from '@/common/components/wrappers/touch';
+import FlatWrapper from '@/common/structures/wrappers/flat';
 import ArrowIcon from '@/common/svgs/arrow';
 import CategoryIcon from '@/common/svgs/category';
 import DateIcon from '@/common/svgs/date';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import Inline from '@/common/structures/inline';
 import PrimaryContainer from '@/common/structures/containers/primary';
@@ -33,8 +33,8 @@ export default function ViewFilter() {
             <ViewFilterSection key={index} index={index}>
               <>
                 {filter.categories.map(categories =>
-                  <PrimaryContainer key={categories.id}>
-                    <TouchWrapper>
+                  <FlatWrapper>
+                    <PrimaryContainer key={categories.id}>
                       <Inline>
                         <PrimaryIconWrapper>
                           <Icon>
@@ -47,11 +47,11 @@ export default function ViewFilter() {
                           </SecondaryLabel>
                         </SecondaryContainer>
                       </Inline>
-                    </TouchWrapper>
-                  </PrimaryContainer>)}
+                    </PrimaryContainer>
+                  </FlatWrapper>)}
                 {filter.dates.map(date =>
-                  <PrimaryContainer key={date.id}>
-                    <TouchWrapper>
+                  <FlatWrapper>
+                    <PrimaryContainer key={date.id}>
                       <Inline>
                         <PrimaryIconWrapper>
                           <Icon>
@@ -64,10 +64,10 @@ export default function ViewFilter() {
                           </SecondaryLabel>
                         </SecondaryContainer>
                       </Inline>
-                    </TouchWrapper>
-                  </PrimaryContainer>)}
+                    </PrimaryContainer>
+                  </FlatWrapper>)}
               </>
-            </ViewFilterSection>
+            </ViewFilterSection >
           )
       })),
       { Filters: null }

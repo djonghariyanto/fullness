@@ -6,6 +6,8 @@
   --primary-label-color: var(--gb500);
   --primary-label-weigth: var(--weight-regular);
   --secondary-label-size: var(--size-sm);
+  --primary-container-top: auto;
+  --primary-container-bottom: auto;
   --primary-container-left: var(--separator24);
   --primary-container-right: var(--separator24);
   --secondary-container-left: var(--separator18);
@@ -13,6 +15,8 @@
   --primary-icon-stroke-selected: var(--g600);
   --primary-icon-stroke: black;
   --flat-button-hover-bgcolor: var(--gb50);
+  --flat-height: 40px;
+  --flat-display: flex;
 }
 
 .filter__section {

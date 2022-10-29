@@ -8,7 +8,7 @@ import { toggleDate } from '@/common/components/filter-group/store/action';
 import { useStore } from '@/store';
 import { SHORTDAYS, MONTHS, SHORTMONTHS } from './';
 import onInitSetMonthTransitionView from './dispatches/on-init-set-month-transition-view';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import PrimaryContainer from '@/common/structures/containers/primary';
 import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import TransitionView, { TransitionViewWrapper } from '@/common/components/transition-view';

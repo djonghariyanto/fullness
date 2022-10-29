@@ -3,7 +3,7 @@ import { default as _ } from './main.css';
 
 import { useStore } from '@/store';
 import { commitPage, loadPath } from '@/store/action';
-import SecondaryButton from '@/common/structures/btns/secondary';
+import SecondaryButton from '@/common/structures/buttons/secondary';
 import SecondaryContainer from '@/common/structures/containers/secondary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import fromSearchStateSwitchComponent from './renders/from-search-state-switch-component';

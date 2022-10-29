@@ -5,7 +5,7 @@ import { useStore } from '@/store';
 import { loginUser, updateLoginEntry } from '@/store/action';
 
 import StretchInputText from '../input-texts/stretch';
-import PrimaryButton from '@/common/structures/btns/primary';
+import PrimaryButton from '@/common/structures/buttons/primary';
 import loginUserEffect from './effects/login-user';
 import initLoginEntry from './dispatches/init-login-entry';
 import applyError from './renders/apply-error';

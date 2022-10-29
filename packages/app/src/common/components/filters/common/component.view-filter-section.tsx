@@ -7,8 +7,8 @@ import Icon from '@/common/structures/wrappers/common/component.icon';
 import SearchIcon from '@/common/svgs/search';
 import EditIcon from '@/common/svgs/edit';
 import OnOffIcon from '@/common/svgs/onoff';
-import TouchWrapper from '@/common/components/wrappers/touch';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatWrapper from '@/common/structures/wrappers/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import PrimaryLabel from '@/common/structures/labels/primary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
 import Inline from '@/common/structures/inline';
@@ -40,13 +40,13 @@ export default function ViewFilterSection(props: Props) {
 
   return (
     <div className={sectionWithDividerBase} {...props}>
-      <PrimaryContainer>
-        <TouchWrapper>
+      <FlatWrapper>
+        <PrimaryContainer>
           <PrimaryLabel>
             FILTER {props.index + 1}
           </PrimaryLabel>
-        </TouchWrapper>
-      </PrimaryContainer>
+        </PrimaryContainer>
+      </FlatWrapper>
       <FlatButton
         onClick={() => dispatch(fetchEvent({ index: props.index }))}
       >

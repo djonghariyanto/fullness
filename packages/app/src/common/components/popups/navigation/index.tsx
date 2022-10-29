@@ -7,7 +7,7 @@ import { loadPath } from '@/store/action';
 import SignoutIcon from '@/common/svgs/signout';
 import PrimaryLabel from '@/common/structures/labels/primary';
 import SecondaryLabel from '@/common/structures/labels/secondary';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import Inline from '@/common/structures/inline';
 import SecondaryWrapper from '@/common/structures/wrappers/secondary';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';

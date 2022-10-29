@@ -5,15 +5,15 @@ import { useStore } from '@/store';
 import { closeDialog } from '@/store/action';
 import { nextInTransitionView } from '@/store/action';
 import SecondaryContainer from '@/common/structures/containers/secondary';
-import FlatButton from '@/common/structures/btns/flat';
-import PrimaryButton from '@/common/structures/btns/primary';
+import FlatButton from '@/common/structures/buttons/flat';
+import PrimaryButton from '@/common/structures/buttons/primary';
 import Icon from '@/common/structures/wrappers/common/component.icon';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
 import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';
 import TransitionView, { TransitionViewWrapper } from '@/common/components/transition-view';
 import DefaultCategory from '@/common/components/categories/default';
 import DefaultCalender from '@/common/components/calenders/default';
-import TouchWrapper from '@/common/components/wrappers/touch';
+import FlatWrapper from '@/common/structures/wrappers/flat';
 import Inline, { InlineItem } from '@/common/structures/inline';
 import PrimaryLabel from '@/common/structures/labels/primary';
 import SignIcon from '@/common/svgs/sign';
@@ -50,16 +50,16 @@ export default function FilterGroup() {
           <InlineItem>
             <TransitionViewWrapper style={{ width: '160px' }}>
               <TransitionView id={filterTitleId}>
-                <TouchWrapper>
+                <FlatWrapper>
                   <PrimaryLabel>
                     CATEGORY
                   </PrimaryLabel>
-                </TouchWrapper>
-                <TouchWrapper>
+                </FlatWrapper>
+                <FlatWrapper>
                   <PrimaryLabel>
                     DATE
                   </PrimaryLabel>
-                </TouchWrapper>
+                </FlatWrapper>
               </TransitionView>
             </TransitionViewWrapper>
           </InlineItem>

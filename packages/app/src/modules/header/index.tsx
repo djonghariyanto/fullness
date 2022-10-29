@@ -10,7 +10,7 @@ import fromSessionState from '@/common/renders/from-session-state';
 import AuthorizedNavigation from '@/common/components/navigations/authorized';
 import UnauthorizedNavigation from '@/common/components/navigations/unauthorized';
 import BindBehavior from '@/common/components/binds/behavior';
-import FlatButton from '@/common/structures/btns/flat';
+import FlatButton from '@/common/structures/buttons/flat';
 import SecondaryContainer from '@/common/structures/containers/secondary';
 import PrimaryIconWrapper from '@/common/structures/wrappers/primary-icon';
 import SecondaryIconWrapper from '@/common/structures/wrappers/secondary-icon';

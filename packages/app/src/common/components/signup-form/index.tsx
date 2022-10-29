@@ -7,7 +7,7 @@ import { registerUser, updateRegisterEntry } from '@/store/action';
 
 import PrimaryTitle from '@/common/structures/titles/primary';
 import StretchInputText from '../input-texts/stretch';
-import PrimaryButton from '@/common/structures/btns/primary';
+import PrimaryButton from '@/common/structures/buttons/primary';
 import ErrorMessage from '@/common/components/messages/error';
 import preventDefaultOnSubmit from '@/common/events/prevent-default-onsubmit';
 import resetErrorOnClick from '@/common/events/reset-error-onclick';
