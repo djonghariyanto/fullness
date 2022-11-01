@@ -18,6 +18,7 @@ import onInit from './dispatches/on-init';
 import ofSubStoreProcessAction from './dispatches/of-sub-store-process-action';
 import fromStoreSelectItem from './renders/from-store-select-item';
 import fromStoreUpdateInput from './effects/from-store-update-input';
+import ofCloseSearchPopupUpdateInput from './effects/of-close-search-popup-update-input';
 
 const base = _["popup--search"];
 
@@ -57,7 +58,10 @@ export default function SearchResultPopup() {
     );
 
   usePipeline(
-    fromStoreUpdateInput()
+    [
+      fromStoreUpdateInput(),
+      ofCloseSearchPopupUpdateInput()
+    ]
   );
 
   useDispatchPipeline(

@@ -17,6 +17,8 @@ const ofCommitSubStoreAddFilter = () =>
         map(state => (<HTMLInputElement>state.searchPopup.inputRef).value),
         filter(value => value.length > 0),
         sample(commit$),
+        map(unsanitized => unsanitized.replace(/[^0-9a-zA-Z]/g, '')),
+        filter(sanitized => sanitized.length > 0),
         map(value => addFilter({
           id: value,
           display: value
