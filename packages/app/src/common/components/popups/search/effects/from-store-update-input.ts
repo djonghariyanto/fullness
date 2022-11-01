@@ -11,7 +11,7 @@ const fromStoreUpdateInput = () =>
     return state
       .pipe(
         map(state => state.searchPopup),
-        filter(search => search.shouldUpdate),
+        filter(search => search.shouldUpdate && search.result?.length > 0),
         map(search => search.result[search.index.curr]),
         distinctUntilChanged(),
         withLatestFrom(input$),

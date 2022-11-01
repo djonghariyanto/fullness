@@ -1,6 +1,7 @@
 import { from, pipe, map, EMPTY, tap, switchMap, exhaustMap } from 'rxjs';
 import { fromFetch } from 'rxjs/fetch';
 import { updateResultTerm } from '@/store/action';
+import * as dompurify from 'dompurify';
 
 const createRequest = (term: { search: string }) => {
   return <RequestInit>{
@@ -14,7 +15,9 @@ const createRequest = (term: { search: string }) => {
 }
 
 const fetchSearch = (initialTerm: string) => pipe(
-  exhaustMap(() => fromFetch(`https://localhost:7138/keyword?search=${initialTerm}`, createRequest({ search: initialTerm }))),
+  map((term: string) => term.replace(/[^a-zA-Z0-9]/g, '')),
+  map(unsanitized => dompurify.sanitize(unsanitized)),
+  exhaustMap((sanitized) => fromFetch(`https://localhost:7138/keyword?search=${sanitized}`, createRequest({ search: sanitized }))),
   exhaustMap(response => from(response.json())),
   map(({ payload }) => payload.length
     ? updateResultTerm([initialTerm, ...payload.map(tag => tag.id)])

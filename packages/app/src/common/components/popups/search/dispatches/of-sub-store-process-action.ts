@@ -19,12 +19,14 @@ const ofSubStoreProcessAction = () =>
         .pipe(
           map(state => state.searchPopup),
           sample(prev$),
+          filter(({ result }) => result?.length > 0),
           map(({ index, result }) => ((index.curr + result.length) - 1) % (result.length))
         ),
       inc$ = state
         .pipe(
           map(state => state.searchPopup),
           sample(next$),
+          filter(({ result }) => result?.length > 0),
           map(({ index, result }) => ((index.curr + 1) % (result.length)))
         );
 

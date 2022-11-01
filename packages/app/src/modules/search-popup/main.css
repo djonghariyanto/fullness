@@ -16,6 +16,10 @@
   width: calc(100% - 48px);
 }
 
+.search-popup--hidden {
+  display: none;
+}
+
 @media (min-width: 415px) {
   .search-popup {
     width: max-content;

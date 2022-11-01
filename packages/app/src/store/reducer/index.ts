@@ -106,7 +106,7 @@ const _reduce = createReducer<ApplicationState>(
     ...state,
     status: {
       ...state.status,
-      hasSearchPopupActivated: true
+      hasSearchPopupActivated: (<HTMLInputElement>state.searchPopup?.inputRef)?.value?.length > 0
     },
     searchPopup: {
       ...state.searchPopup,
@@ -129,7 +129,7 @@ const _reduce = createReducer<ApplicationState>(
     ...state,
     status: {
       ...state.status,
-      hasSearchPopupActivated: true
+      hasSearchPopupActivated: (<HTMLInputElement>state.searchPopup?.inputRef)?.value?.length > 0
     },
     searchPopup: {
       ...state.searchPopup,
@@ -138,7 +138,7 @@ const _reduce = createReducer<ApplicationState>(
       index: {
         prev: state.searchPopup.index.curr,
         curr: 0
-      } 
+      }
     }
   })),
 

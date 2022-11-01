@@ -14,7 +14,7 @@ const onInitCalculatePosition = (ref: React.MutableRefObject<HTMLElement>) =>
       .pipe(
         withLatestFrom(callerPosition$),
         map(calculatePosition),
-        map(style => (render: { style: React.CSSProperties }) => ({
+        map(style => (render: { style: React.CSSProperties, className: string }) => ({
           ...render,
           style: { ...style, opacity: 1 }
         }))
