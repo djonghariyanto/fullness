@@ -2,7 +2,12 @@ import * as React from 'react';
 import { default as _ } from '../main.css';
 import { useStore } from '@/store';
 import { fetchEvent } from '@/store/action';
+import PrimaryContainer from '@/common/structures/containers/primary';
+import SecondaryContainer from '@/common/structures/containers/secondary';
+import PrimaryWrapper from '@/common/structures/wrappers/primary';
+import SecondaryWrapper from '@/common/structures/wrappers/secondary';
 import PrimaryLabel from '@/common/structures/labels/primary';
+import SecondaryLabel from '@/common/structures/labels/secondary';
 import PrimaryLink from '@/common/structures/links/primary';
 import fromStateGetFilters from '../renders/from-state-get-filters';
 
@@ -17,14 +22,20 @@ export default function CloseHeader() {
 
   return (
     <div className={filterChild}>
-      <div>
-        <PrimaryLabel>
-          {render?.filters?.join(', ')}
-        </PrimaryLabel>
-        <div>
-          Showing any matches, <PrimaryLink onClick={() => dispatch(fetchEvent())}>delete</PrimaryLink>
-        </div>
-      </div>
+      <PrimaryWrapper>
+        <PrimaryContainer>
+          <PrimaryLabel>
+            {render?.filters?.join(' \u2022 ')}
+          </PrimaryLabel>
+        </PrimaryContainer>
+      </PrimaryWrapper>
+      <SecondaryWrapper>
+        <SecondaryContainer>
+          <SecondaryLabel>
+            Showing any matches, <PrimaryLink onClick={() => dispatch(fetchEvent())}>delete</PrimaryLink>
+          </SecondaryLabel>
+        </SecondaryContainer>
+      </SecondaryWrapper>
     </div>
   );
 }

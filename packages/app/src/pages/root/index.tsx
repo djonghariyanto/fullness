@@ -17,10 +17,8 @@ const contentChild = _["root__content"];
 
 export default function Root(props: Props): React.ReactElement {
   const { useRenderPipeline, useDispatchPipeline } = useStore(),
-    render = useRenderPipeline(
-      [
-        fromFilterStateRenderClose(<CloseHeader />)
-      ],
+    render = useRenderPipeline<{ Close: React.ReactElement }>(
+      fromFilterStateRenderClose(<CloseHeader />),
       { Close: null }
     );
 

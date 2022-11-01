@@ -1,4 +1,4 @@
-import { map, switchMap, merge, sample, of, iif } from 'rxjs';
+import { map, switchMap, merge, debounceTime, sample, of, iif } from 'rxjs';
 import { Store, ofType } from '@/store';
 import { closeSearchPopup, fetchSearchTerm } from '@/store/action';
 import fetchSearch from '../common/util.fetch';
@@ -15,6 +15,7 @@ const onInit = () =>
         map(state => state.searchPopup),
         sample(fetch$),
         map(search => (<HTMLInputElement>search.inputRef).value),
+        debounceTime(500),
         switchMap(term => iif(
           () => term.length > 0,
           of(term)

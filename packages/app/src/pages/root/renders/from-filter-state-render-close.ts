@@ -7,7 +7,7 @@ const fromFilterStateRenderClose = (Component: React.ReactElement) =>
       .pipe(
         map(state => state.status),
         distinctUntilKeyChanged('isFilterUsed'),
-        map(status => (render) => ({
+        map(status => (render: { Close: React.ReactElement}) => ({
           ...render, 
           Close: status.isFilterUsed ? Component : null
         })),

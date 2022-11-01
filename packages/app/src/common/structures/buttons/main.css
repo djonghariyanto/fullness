@@ -89,6 +89,7 @@
 
   .button--flat:hover {
     background-color: var(--flat-button-hover-bgcolor);
+    border-radius: var(--flat-button-radius, var(--default-flat-button-radius));
   }
 
   .button--flat-selected:hover {

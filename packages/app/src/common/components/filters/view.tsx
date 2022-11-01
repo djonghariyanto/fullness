@@ -33,8 +33,8 @@ export default function ViewFilter() {
             <ViewFilterSection key={index} index={index}>
               <>
                 {filter.categories.map(categories =>
-                  <FlatWrapper>
-                    <PrimaryContainer key={categories.id}>
+                  <FlatWrapper key={categories.id}>
+                    <PrimaryContainer>
                       <Inline>
                         <PrimaryIconWrapper>
                           <Icon>
@@ -50,8 +50,8 @@ export default function ViewFilter() {
                     </PrimaryContainer>
                   </FlatWrapper>)}
                 {filter.dates.map(date =>
-                  <FlatWrapper>
-                    <PrimaryContainer key={date.id}>
+                  <FlatWrapper key={date.id}>
+                    <PrimaryContainer>
                       <Inline>
                         <PrimaryIconWrapper>
                           <Icon>

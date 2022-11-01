@@ -26,19 +26,13 @@
 
 .dialog__content__close {
   position: absolute;
-  top: -42px;
+  top: -48px;
   left: calc( 50% - 16px );
-  border-radius: 50px;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #73758c;
-  color: white;
-  background-color: #8f91a3;
-  cursor: pointer;
-  outline: none;
+  border-radius: 24px;
+  color: #fff;
+  background-color: var(--gb500);
+  --flat-button-hover-bgcolor: var(--gb600);
+  --flat-button-radius: 24px; 
 }
 
 @media (min-width: 415px) {

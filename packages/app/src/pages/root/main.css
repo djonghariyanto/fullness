@@ -16,25 +16,36 @@
   --tertiary-label-weight: var(--weight-bold);
   --tertiary-label-color: var(--gb400);
   margin-top: 96px;
-  background-color: var(--gb25);
+  background-color: #fff;
 }
 
 .root__filter {
   position: relative;
-  padding: 36px 28px;
-  width: 100%;
-  display: inline-flex;
-  align-items: center;
-  background-color: var(--sw400);
-  box-sizing: border-box;
+  margin-inline: 24px;
   margin-bottom: 24px;
-  line-height: 1.5rem;
-  color: #fff;
-  --primary-label-size: var(--size-txs);
-  --primary-label-weight: var(--weight-regular);
-  --primary-label-color: #fff; 
+  line-height: 1.8rem;
+  --primary-label-size: var(--size-sm);
+  --primary-label-weight: var(--weight-semi-bold);
+  --primary-label-color: var(--gb700); 
   --primary-link-color: var(--gb700);
   --primary-link-decoration-hover: underline;
+  --primary-container-left: 24px;
+  --primary-container-right: 24px;
+  --primary-container-top: 24px;
+  --primary-container-bottom: 24px;
+  --primary-display: flex;
+  --primary-radius: 8px;
+  --primary-bgcolor: var(--gb100);
+  --secondary-container-left: 24px;
+  --secondary-container-right: 24px;
+  --secondary-container-top: auto;
+  --secondary-container-bottom: auto;
+  --secondary-display: flex;
+  --secondary-height: 40px;
+  --secondary-bgcolor: #fff;
+  --secondary-label-size: var(--size-sm);
+  --secondary-label-weight: var(--weight-medium);
+  --secondary-label-color: var(--gb400); 
 }
 
 .root__content {

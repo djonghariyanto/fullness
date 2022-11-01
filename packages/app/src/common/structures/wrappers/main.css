@@ -37,10 +37,22 @@
   height: 24px;
 }
 
+.wrapper--primary {
+  background-color: var(--primary-bgcolor);
+  color: var(--primary-color, inherit);
+  height: var(--primary-height, auto);
+  border-radius: var(--primary-radius, 0);
+  width: var(--primary-width, inherit);
+  display: var(--primary-display, inherit);
+}
+
 .wrapper--secondary {
-  background-color: var(--secondary-bgcolor);
-  color: var(--secondary-color);
-  border-radius: var(--secondary-radius);
+  color: var(--secondary-color, inherit);
+  background-color: var(--secondary-bgcolor, inherit);
+  height: var(--secondary-height, auto);
+  border-radius: var(--secondary-radius, 0);
+  width: var(--secondary-width, inherit);
+  display: var(--secondary-display, inherit);
 }
 
 .wrapper--flat {
